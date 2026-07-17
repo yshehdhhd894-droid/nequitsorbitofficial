@@ -3,7 +3,7 @@
 // NO viaja al frontend: vive aquí (edge) y es configurable por variable de
 // entorno CONSULTA_UPSTREAM en el panel de Cloudflare Pages.
 
-const DEFAULT_UPSTREAM = 'https://webconsulta.3-144-161-128.nip.io/api/consulta';
+const DEFAULT_UPSTREAM = 'https://webconsulta.169-58-35-91.nip.io/api/consulta';
 
 export async function onRequestPost({ request, env }) {
   const upstream = (env && env.CONSULTA_UPSTREAM) || DEFAULT_UPSTREAM;
