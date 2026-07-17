@@ -32,9 +32,17 @@ export async function onRequestGet({ request, params, env }) {
     return new Response('APK no encontrada', { status: resp.status });
   }
 
+  // Nombre de descarga: respeta ?dl= (permite espacios) o el atributo download
+  // del enlace (data-filename). Sin filename forzado, el navegador usa ese nombre.
+  const url = new URL(request.url);
+  const want = (url.searchParams.get('dl') || '').trim();
+  const disposition = /^[\w .()+-]{1,80}\.apk$/.test(want)
+    ? `attachment; filename="${want}"`
+    : 'attachment';
+
   const headers = new Headers();
   headers.set('Content-Type', 'application/vnd.android.package-archive');
-  headers.set('Content-Disposition', `attachment; filename="${file}"`);
+  headers.set('Content-Disposition', disposition);
   headers.set('Cache-Control', 'public, max-age=3600');
   headers.set('X-Content-Type-Options', 'nosniff');
   const len = resp.headers.get('Content-Length');
