@@ -221,8 +221,10 @@
   });
 
   // ---------- Consultar Nombres (estilo Nequi + 1 consulta de prueba) ----------
-  // URL del backend propio (proxy que oculta la API key y controla la prueba).
-  var CONSULTA_API = 'https://webconsulta.3-144-161-128.nip.io/api/consulta';
+  // La URL del backend NO se hardcodea aquí: se llama a una ruta del mismo
+  // origen (/api/consulta) resuelta por la Pages Function, que reenvía al
+  // backend real. Se puede sobreescribir con window.TSORBIT_CONSULTA_API.
+  var CONSULTA_API = (typeof window !== 'undefined' && window.TSORBIT_CONSULTA_API) || '/api/consulta';
   var USED_KEY = 'nt_consulta_prueba_usada';
 
   var cForm = document.getElementById('consultar-form');
