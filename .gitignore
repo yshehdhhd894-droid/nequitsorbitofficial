@@ -1,3 +1,6 @@
 server.log
 .DS_Store
 *.apk
+_src/
+build-tools/
+*.orig
