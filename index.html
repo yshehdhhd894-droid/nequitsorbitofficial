@@ -1119,10 +1119,68 @@ Pago protegido · Cifrado seguro
 </p>
 </form>
 </div>
+<div class="nq-step" id="recarga-step-payment" hidden>
+<h3 class="nq-step-title">Elige cómo pagar</h3>
+<p class="nq-step-sub">Tu usuario se activa al confirmar el pago</p>
+<div class="nq-choice-list">
+<button type="button" class="nq-choice" data-payment="wompi">
+<span class="nq-payment-ico">W</span>
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Wompi</span>
+<span class="nq-choice-desc">Pago automático y confirmación inmediata</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+<button type="button" class="nq-choice" data-payment="breb">
+<span class="nq-payment-ico is-breb">B</span>
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Bre-B</span>
+<span class="nq-choice-desc">Llave: @AXONDEVUI · aprobación manual</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+<button type="button" class="nq-choice" data-payment="nequi">
+<span class="nq-payment-ico is-nequi">N</span>
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Nequi</span>
+<span class="nq-choice-desc">Contacta al administrador por Telegram</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+</div>
+</div>
+<div class="nq-step" id="recarga-step-breb" hidden>
+<h3 class="nq-step-title">Paga por Bre-B</h3>
+<div class="nq-manual-card">
+<span>Llave Bre-B</span>
+<strong>@AXONDEVUI</strong>
+<button type="button" id="recarga-copy-breb">Copiar llave</button>
+</div>
+<p class="nq-step-sub">Transfiere exactamente <b id="recarga-manual-amount">—</b>. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
+<form id="recarga-breb-form" class="nq-recarga-form nq-manual-form" novalidate>
+<div class="nq-fld">
+<input id="recarga-payer-name" class="nq-fldi" type="text" autocomplete="name"
+placeholder=" " maxlength="80" />
+<label class="nq-fldl" for="recarga-payer-name">Nombres y apellidos del pagador</label>
+</div>
+<p class="nq-rhint" id="recarga-breb-hint" hidden></p>
+<button class="nq-rbtn" id="recarga-breb-ready" type="submit">Listo, ya pagué</button>
+</form>
+</div>
+<div class="nq-step" id="recarga-step-nequi-pay" hidden>
+<h3 class="nq-step-title">Pago por Nequi</h3>
+<div class="nq-manual-card">
+<span>Atención por Telegram</span>
+<strong>@AXONDEVUI</strong>
+</div>
+<p class="nq-step-sub">Contacta al administrador, realiza el pago y espera la aprobación. Tu solicitud quedará vinculada a esta compra.</p>
+<button class="nq-rbtn" id="recarga-nequi-contact" type="button">Contactar y enviar solicitud</button>
+<p class="nq-rhint" id="recarga-nequi-hint" hidden></p>
+</div>
 <div class="nq-rstate" id="recarga-processing" hidden>
 <div class="nq-rspinner" aria-hidden="true"></div>
-<h4>Verificando tu pago…</h4>
-<p class="nq-rsub">No cierres esta ventana.</p>
+<h4 id="recarga-processing-title">Verificando tu pago…</h4>
+<p class="nq-rsub" id="recarga-processing-msg">No cierres esta ventana.</p>
 </div>
 <div class="nq-rstate" id="recarga-done" hidden>
 <img class="nq-rcheck" src="m/64002dc1f914.svg" alt="" aria-hidden="true" />
