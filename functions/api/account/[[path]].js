@@ -7,6 +7,8 @@ const ALLOWED_PATHS = new Set([
   'logout',
   'me',
   'purchases',
+  'forgot',
+  'reset',
 ]);
 
 export async function onRequest({ request, env, params }) {

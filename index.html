@@ -921,6 +921,35 @@ Tu navegador no soporta el video.
 <p class="nq-rhint account-hint" hidden></p>
 <button class="nq-rbtn" type="submit">Ingresar</button>
 <p class="account-switch">¿No tienes cuenta? <button type="button" id="account-to-register">Regístrate gratis</button></p>
+<p class="account-switch"><button type="button" id="account-to-forgot">¿Olvidaste tu usuario o PIN?</button></p>
+</form>
+<form id="account-forgot-form" class="nq-recarga-form account-form" novalidate hidden>
+<p class="account-forgot-info">Escribe tu correo y te enviaremos tu nombre de usuario y un código para crear un PIN nuevo.</p>
+<div class="nq-fld">
+<input id="account-forgot-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
+<label class="nq-fldl" for="account-forgot-email">Correo</label>
+</div>
+<p class="nq-rhint account-hint" hidden></p>
+<button class="nq-rbtn" type="submit">Enviar código</button>
+<p class="account-switch"><button type="button" id="account-forgot-back">Volver al inicio de sesión</button></p>
+</form>
+<form id="account-reset-form" class="nq-recarga-form account-form" novalidate hidden>
+<p class="account-forgot-info">Revisa tu correo: te llegó un código de 6 dígitos.</p>
+<div class="nq-fld">
+<input id="account-reset-code" class="nq-fldi" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder=" " maxlength="6" />
+<label class="nq-fldl" for="account-reset-code">Código de 6 dígitos</label>
+</div>
+<div class="nq-fld">
+<input id="account-reset-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-reset-pin">Nuevo PIN de 4 dígitos</label>
+</div>
+<div class="nq-fld">
+<input id="account-reset-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-reset-pin-confirm">Confirmar nuevo PIN</label>
+</div>
+<p class="nq-rhint account-hint" hidden></p>
+<button class="nq-rbtn" type="submit">Cambiar PIN</button>
+<p class="account-switch"><button type="button" id="account-reset-back">Volver al inicio de sesión</button></p>
 </form>
 <form id="account-register-form" class="nq-recarga-form account-form" novalidate hidden>
 <div class="nq-fld">
