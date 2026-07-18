@@ -510,13 +510,41 @@ required
 </main>
 <div class="modal" id="support-modal" aria-hidden="true">
 <div class="modal-backdrop" data-close></div>
-<div class="modal-card" role="dialog" aria-modal="true" aria-label="Contactos de soporte">
+<div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Recargas y Soporte">
 <button class="modal-close" data-close aria-label="Cerrar">✕</button>
 <div class="modal-head">
-<h3>Elige un canal</h3>
-<p>Te atenderemos para tu recarga o compra.</p>
+<h3>Recargas y Soporte</h3>
+<p>Recarga automática o contacta por un canal.</p>
+</div>
+<div class="adquirir-list">
+<button type="button" class="adquirir-option adquirir-auto" id="support-go-auto">
+<span class="adq-ico" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+<defs><linearGradient id="sup-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 4.5V9h4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 19.5V15h-4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+<span class="adq-meta">
+<span class="adq-title">Recarga automática</span>
+<span class="adq-desc">Paga en línea · Tu usuario se activa solo</span>
+</span>
+<span class="adq-arrow" aria-hidden="true">›</span>
+</button>
+<div class="adquirir-support-block">
+<div class="adquirir-support-head">
+<span class="adq-ico" aria-hidden="true">💬</span>
+<span class="adq-meta">
+<span class="adq-title">Contactar a soporte</span>
+<span class="adq-desc">Telegram o WhatsApp</span>
+</span>
 </div>
 <div class="contacts" id="contacts"></div>
+</div>
+</div>
 </div>
 </div>
 <div class="modal" id="keys-modal" aria-hidden="true">
