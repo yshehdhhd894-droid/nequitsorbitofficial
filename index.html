@@ -18,6 +18,16 @@
 <div class="bg-embers" aria-hidden="true"></div>
 <div class="bg-glow" aria-hidden="true"></div>
 <canvas id="orbit-canvas" aria-hidden="true"></canvas>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none">
+<defs>
+<linearGradient id="actGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
+</linearGradient>
+<linearGradient id="actGradVip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+<stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
+</linearGradient>
+</defs>
+</svg>
 <header class="nav">
 <div class="brand" data-view="view-home" role="button" tabindex="0">
 <img src="m/467df82bc779.svg" alt="Nequi Tsorbit" class="brand-logo" />
@@ -313,27 +323,61 @@
 </div>
 <div class="act-grid">
 <button class="act-tile tilt3d" data-view="view-consultar">
-<div class="act-ico consultar-ico"></div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Consultar Nombres</span>
 <span class="act-sub">Verifica un titular</span>
 </button>
 <button class="act-tile tilt3d" data-open="support-modal">
-<div class="act-ico">⚡</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Recargas y Soporte</span>
 <span class="act-sub">Contacto directo</span>
 </button>
 <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<div class="act-ico">▶</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
 <span class="act-name">Recarga automática</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="keys-modal">
-<div class="act-ico">🔑</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo usar llaves?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="vip-modal">
-<div class="act-ico">★</div>
+<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo saber si soy VIP?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
@@ -371,27 +415,61 @@
 </div>
 <div class="act-grid">
 <button class="act-tile tilt3d" data-view="view-consultar">
-<div class="act-ico consultar-ico"></div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Consultar Nombres</span>
 <span class="act-sub">Verifica un titular</span>
 </button>
 <button class="act-tile tilt3d" data-open="support-modal">
-<div class="act-ico">⚡</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Recargas y Soporte</span>
 <span class="act-sub">Contacto directo</span>
 </button>
 <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<div class="act-ico">▶</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
 <span class="act-name">Recarga automática</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="keys-modal">
-<div class="act-ico">🔑</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo usar llaves?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="vip-modal">
-<div class="act-ico">★</div>
+<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo saber si soy VIP?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
@@ -429,27 +507,61 @@
 </div>
 <div class="act-grid">
 <button class="act-tile tilt3d" data-view="view-consultar">
-<div class="act-ico consultar-ico"></div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Consultar Nombres</span>
 <span class="act-sub">Verifica un titular</span>
 </button>
 <button class="act-tile tilt3d" data-open="support-modal">
-<div class="act-ico">⚡</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+</svg>
+</span>
 <span class="act-name">Recargas y Soporte</span>
 <span class="act-sub">Contacto directo</span>
 </button>
 <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<div class="act-ico">▶</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
 <span class="act-name">Recarga automática</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="keys-modal">
-<div class="act-ico">🔑</div>
+<span class="act-ico act-ico-ic" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo usar llaves?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
 <button class="act-tile tilt3d" data-open="vip-modal">
-<div class="act-ico">★</div>
+<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none">
+<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+</svg>
+</span>
 <span class="act-name">¿Cómo saber si soy VIP?</span>
 <span class="act-sub">Video tutorial</span>
 </button>
