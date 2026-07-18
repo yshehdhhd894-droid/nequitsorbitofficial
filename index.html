@@ -82,7 +82,7 @@
 <div class="section-head">
 <span class="kicker">TARIFAS</span>
 <h2>Lista de precios</h2>
-<p>Precios por saldo. Adquiérelo con soporte.</p>
+<p>Precios por saldo. Recarga automática o con soporte.</p>
 </div>
 <div class="price-grid">
 <div class="price-card tilt3d">
@@ -117,7 +117,7 @@
 <a class="price-cta" data-recarga="p50" role="button" tabindex="0">Adquirir</a>
 </div>
 </div>
-<p class="price-note">Los precios pueden variar. Confirma disponibilidad con soporte antes de pagar.</p>
+<p class="price-note">Elige recarga automática o contacta a soporte para adquirir.</p>
 </section>
 <section id="soporte" class="section">
 <div class="section-head">
@@ -475,6 +475,36 @@ Tu navegador no soporta el video.
 <button class="btn-primary tilt3d" id="download-confirm">Descargar APK</button>
 </div>
 <p class="confirm-note">Aplicación independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
+</div>
+</div>
+<div class="modal" id="adquirir-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Elegir método de compra">
+<button class="modal-close" data-close aria-label="Cerrar">✕</button>
+<div class="modal-head">
+<h3>¿Cómo deseas adquirir?</h3>
+<p id="adquirir-pkg-label">Elige una opción para continuar.</p>
+</div>
+<div class="adquirir-list">
+<button type="button" class="adquirir-option adquirir-auto" id="adquirir-go-auto">
+<span class="adq-ico" aria-hidden="true">⚡</span>
+<span class="adq-meta">
+<span class="adq-title">Recarga automática</span>
+<span class="adq-desc">Paga con Wompi y tu usuario se activa solo</span>
+</span>
+<span class="adq-arrow" aria-hidden="true">›</span>
+</button>
+<div class="adquirir-support-block">
+<div class="adquirir-support-head">
+<span class="adq-ico" aria-hidden="true">💬</span>
+<span class="adq-meta">
+<span class="adq-title">Contactar a soporte</span>
+<span class="adq-desc">Te atendemos por Telegram o WhatsApp</span>
+</span>
+</div>
+<div class="contacts" id="adquirir-contacts"></div>
+</div>
+</div>
 </div>
 </div>
 <div class="modal" id="recarga-modal" aria-hidden="true">
