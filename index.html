@@ -507,53 +507,74 @@ Tu navegador no soporta el video.
 </div>
 </div>
 </div>
-<div class="modal" id="recarga-modal" aria-hidden="true">
+<div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
 <div class="modal-backdrop" data-close></div>
-<div class="modal-card recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<h3>Recarga automática</h3>
-<p>Crea tu usuario y paga en segundos. Se activa solo.</p>
+<div class="modal-card nq-recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
+<button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
+<div class="nq-topbar">
+<img class="nq-brand" src="m/00f6a980fa11.svg" alt="Nequi" />
+<span class="nq-topbar-tag">Recarga</span>
 </div>
-<div class="recarga-summary" id="recarga-summary">
-<span class="recarga-saldo" id="recarga-saldo">—</span>
-<span class="recarga-precio" id="recarga-precio">—</span>
+<div class="nq-saldo-card">
+<div class="nq-saldo-head">
+<span class="nq-saldo-label">Disponible</span>
+<button type="button" class="nq-eye" id="recarga-eye" aria-label="Mostrar u ocultar saldo">
+<img class="nq-eye-show" src="m/c11ff13e5ac5.svg" alt="" aria-hidden="true" />
+<img class="nq-eye-hide" src="m/f72f7e8086b8.svg" alt="" aria-hidden="true" hidden />
+</button>
 </div>
-<form id="recarga-form" novalidate>
-<label class="recarga-field">
-<span>Número de celular</span>
-<input id="recarga-phone" type="tel" inputmode="numeric" autocomplete="off"
+<div class="nq-saldo-amount" id="recarga-saldo">$ 0</div>
+<div class="nq-saldo-foot">
+<span class="nq-saldo-pill" id="recarga-precio">—</span>
+<span class="nq-saldo-note">Se acredita al confirmar el pago</span>
+</div>
+</div>
+<form id="recarga-form" class="nq-recarga-form" novalidate>
+<label class="nq-rfield">
+<span class="nq-rlabel">Número de celular</span>
+<div class="nq-rinput-wrap">
+<input id="recarga-phone" class="nq-rinput" type="tel" inputmode="numeric" autocomplete="off"
 placeholder="300 000 0000" maxlength="12" />
+</div>
 </label>
-<label class="recarga-field">
-<span>Crea tu PIN (4 dígitos)</span>
-<input id="recarga-pin" type="password" inputmode="numeric" autocomplete="off"
+<label class="nq-rfield">
+<span class="nq-rlabel">Crea tu clave (4 dígitos)</span>
+<div class="nq-rinput-wrap">
+<input id="recarga-pin" class="nq-rinput" type="password" inputmode="numeric" autocomplete="off"
 placeholder="••••" maxlength="4" />
+</div>
 </label>
-<label class="recarga-field">
-<span>Confirma tu PIN</span>
-<input id="recarga-pin2" type="password" inputmode="numeric" autocomplete="off"
+<label class="nq-rfield">
+<span class="nq-rlabel">Confirma tu clave</span>
+<div class="nq-rinput-wrap">
+<input id="recarga-pin2" class="nq-rinput" type="password" inputmode="numeric" autocomplete="off"
 placeholder="••••" maxlength="4" />
+</div>
 </label>
-<p class="recarga-hint" id="recarga-hint" hidden></p>
-<button class="btn-primary tilt3d" id="recarga-submit" type="submit">Pagar con Wompi</button>
+<p class="nq-rhint" id="recarga-hint" hidden></p>
+<button class="nq-rbtn" id="recarga-submit" type="submit">Pagar con Wompi</button>
+<p class="nq-rsecure">
+<img src="m/bdd63a7873be.svg" alt="" aria-hidden="true" />
+Pago protegido con Wompi · Cifrado seguro
+</p>
 </form>
-<div class="recarga-processing" id="recarga-processing" hidden>
-<div class="recarga-spinner" aria-hidden="true"></div>
-<p>Verificando tu pago…</p>
-<p class="recarga-sub">No cierres esta ventana.</p>
+<div class="nq-rstate" id="recarga-processing" hidden>
+<div class="nq-rspinner" aria-hidden="true"></div>
+<h4>Verificando tu pago…</h4>
+<p class="nq-rsub">No cierres esta ventana.</p>
 </div>
-<div class="recarga-done" id="recarga-done" hidden>
-<div class="recarga-check" aria-hidden="true">✓</div>
+<div class="nq-rstate" id="recarga-done" hidden>
+<img class="nq-rcheck" src="m/64002dc1f914.svg" alt="" aria-hidden="true" />
 <h4 id="recarga-done-title">¡Usuario activado!</h4>
-<p id="recarga-done-msg">Tu saldo ya está disponible. Entra a la app con tu número y PIN.</p>
+<p id="recarga-done-msg" class="nq-rsub">Tu saldo ya está disponible. Entra a la app con tu número y clave.</p>
 </div>
-<div class="recarga-failed" id="recarga-failed" hidden>
+<div class="nq-rstate" id="recarga-failed" hidden>
+<img class="nq-rfailico" src="m/39c1d6a8a1a1.svg" alt="" aria-hidden="true" />
 <h4>Pago no completado</h4>
-<p id="recarga-failed-msg">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
-<button class="btn-ghost tilt3d" type="button" id="recarga-retry">Reintentar</button>
+<p id="recarga-failed-msg" class="nq-rsub">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
+<button class="nq-rbtn nq-rbtn-ghost" type="button" id="recarga-retry">Reintentar</button>
 </div>
-<p class="confirm-note">Pago seguro con Wompi. Servicio independiente de Tsorbit.</p>
+<p class="nq-rlegal">Servicio independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
 </div>
 </div>
 <footer class="footer">
