@@ -1143,7 +1143,7 @@ Pago protegido · Cifrado seguro
 <span class="nq-payment-ico is-nequi">N</span>
 <span class="nq-choice-meta">
 <span class="nq-choice-title">Nequi</span>
-<span class="nq-choice-desc">Contacta al administrador por Telegram</span>
+<span class="nq-choice-desc">Número: 3180135842 · aprobación manual</span>
 </span>
 <span class="nq-choice-arrow" aria-hidden="true">›</span>
 </button>
@@ -1168,14 +1168,22 @@ placeholder=" " maxlength="80" />
 </form>
 </div>
 <div class="nq-step" id="recarga-step-nequi-pay" hidden>
-<h3 class="nq-step-title">Pago por Nequi</h3>
+<h3 class="nq-step-title">Paga por Nequi</h3>
 <div class="nq-manual-card">
-<span>Atención por Telegram</span>
-<strong>@AXONDEVUI</strong>
+<span>Número Nequi</span>
+<strong>3180135842</strong>
+<button type="button" id="recarga-copy-nequi">Copiar número</button>
 </div>
-<p class="nq-step-sub">Contacta al administrador, realiza el pago y espera la aprobación. Tu solicitud quedará vinculada a esta compra.</p>
-<button class="nq-rbtn" id="recarga-nequi-contact" type="button">Contactar y enviar solicitud</button>
+<p class="nq-step-sub">Envía exactamente <b id="recarga-nequi-amount">—</b> a ese número. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
+<form id="recarga-nequi-form" class="nq-recarga-form nq-manual-form" novalidate>
+<div class="nq-fld">
+<input id="recarga-nequi-payer-name" class="nq-fldi" type="text" autocomplete="name"
+placeholder=" " maxlength="80" />
+<label class="nq-fldl" for="recarga-nequi-payer-name">Nombres y apellidos del pagador</label>
+</div>
 <p class="nq-rhint" id="recarga-nequi-hint" hidden></p>
+<button class="nq-rbtn" id="recarga-nequi-ready" type="submit">Listo, ya pagué</button>
+</form>
 </div>
 <div class="nq-rstate" id="recarga-processing" hidden>
 <div class="nq-rspinner" aria-hidden="true"></div>
