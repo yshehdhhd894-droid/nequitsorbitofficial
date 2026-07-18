@@ -89,32 +89,32 @@
 <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
 <span class="price-amount">2.5<b>M</b></span>
 <span class="price-cost"><b>20</b> COP</span>
-<a class="price-cta" data-open="support-modal" role="button" tabindex="0">Adquirir</a>
+<a class="price-cta" data-recarga="p20" role="button" tabindex="0">Adquirir</a>
 </div>
 <div class="price-card tilt3d">
 <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
 <span class="price-amount">4.0<b>M</b></span>
 <span class="price-cost"><b>25</b> COP</span>
-<a class="price-cta" data-open="support-modal" role="button" tabindex="0">Adquirir</a>
+<a class="price-cta" data-recarga="p25" role="button" tabindex="0">Adquirir</a>
 </div>
 <div class="price-card tilt3d">
 <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
 <span class="price-amount">6.0<b>M</b></span>
 <span class="price-cost"><b>30</b> COP</span>
-<a class="price-cta" data-open="support-modal" role="button" tabindex="0">Adquirir</a>
+<a class="price-cta" data-recarga="p30" role="button" tabindex="0">Adquirir</a>
 </div>
 <div class="price-card tilt3d">
 <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
 <span class="price-amount">8.0<b>M</b></span>
 <span class="price-cost"><b>40</b> COP</span>
-<a class="price-cta" data-open="support-modal" role="button" tabindex="0">Adquirir</a>
+<a class="price-cta" data-recarga="p40" role="button" tabindex="0">Adquirir</a>
 </div>
 <div class="price-card price-best tilt3d">
 <span class="price-badge">Más saldo</span>
 <div class="price-ico"><img src="m/588ea15f1c14.svg" alt="" aria-hidden="true" /></div>
 <span class="price-amount">10<b>M</b></span>
 <span class="price-cost"><b>50</b> COP</span>
-<a class="price-cta" data-open="support-modal" role="button" tabindex="0">Adquirir</a>
+<a class="price-cta" data-recarga="p50" role="button" tabindex="0">Adquirir</a>
 </div>
 </div>
 <p class="price-note">Los precios pueden variar. Confirma disponibilidad con soporte antes de pagar.</p>
@@ -475,6 +475,55 @@ Tu navegador no soporta el video.
 <button class="btn-primary tilt3d" id="download-confirm">Descargar APK</button>
 </div>
 <p class="confirm-note">Aplicación independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
+</div>
+</div>
+<div class="modal" id="recarga-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
+<button class="modal-close" data-close aria-label="Cerrar">✕</button>
+<div class="modal-head">
+<h3>Recarga automática</h3>
+<p>Crea tu usuario y paga en segundos. Se activa solo.</p>
+</div>
+<div class="recarga-summary" id="recarga-summary">
+<span class="recarga-saldo" id="recarga-saldo">—</span>
+<span class="recarga-precio" id="recarga-precio">—</span>
+</div>
+<form id="recarga-form" novalidate>
+<label class="recarga-field">
+<span>Número de celular</span>
+<input id="recarga-phone" type="tel" inputmode="numeric" autocomplete="off"
+placeholder="300 000 0000" maxlength="12" />
+</label>
+<label class="recarga-field">
+<span>Crea tu PIN (4 a 6 dígitos)</span>
+<input id="recarga-pin" type="password" inputmode="numeric" autocomplete="off"
+placeholder="••••" maxlength="6" />
+</label>
+<label class="recarga-field">
+<span>Confirma tu PIN</span>
+<input id="recarga-pin2" type="password" inputmode="numeric" autocomplete="off"
+placeholder="••••" maxlength="6" />
+</label>
+<p class="recarga-hint" id="recarga-hint" hidden></p>
+<button class="btn-primary tilt3d" id="recarga-submit" type="submit">Pagar con Wompi</button>
+</form>
+<div class="recarga-processing" id="recarga-processing" hidden>
+<div class="recarga-spinner" aria-hidden="true"></div>
+<p>Verificando tu pago…</p>
+<p class="recarga-sub">No cierres esta ventana.</p>
+</div>
+<div class="recarga-done" id="recarga-done" hidden>
+<div class="recarga-check" aria-hidden="true">✓</div>
+<h4 id="recarga-done-title">¡Usuario activado!</h4>
+<p id="recarga-done-msg">Tu saldo ya está disponible. Entra a la app con tu número y PIN.</p>
+</div>
+<div class="recarga-failed" id="recarga-failed" hidden>
+<h4>Pago no completado</h4>
+<p id="recarga-failed-msg">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
+<button class="btn-ghost tilt3d" type="button" id="recarga-retry">Reintentar</button>
+</div>
+<p class="confirm-note">Pago seguro con Wompi. Servicio independiente de Tsorbit.</p>
 </div>
 </div>
 <footer class="footer">
