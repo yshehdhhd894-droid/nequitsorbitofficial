@@ -897,13 +897,13 @@ Tu navegador no soporta el video.
 </div>
 </div>
 </div>
-<div class="modal nequi-scope" id="account-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Mi cuenta">
-<button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
+<div class="modal nequi-scope account-gate" id="account-modal" aria-hidden="true">
+<div class="modal-backdrop account-backdrop"></div>
+<div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Inicia sesión">
+<button class="modal-close nq-close" id="account-close" data-close aria-label="Cerrar" hidden>✕</button>
 <div class="nq-topbar">
 <img class="nq-brand" src="m/00f6a980fa11.svg" alt="Tsorbit" />
-<span class="nq-topbar-tag">Mi cuenta</span>
+<span class="nq-topbar-tag">Acceso</span>
 </div>
 <div id="account-auth">
 <div class="account-auth-head">
@@ -964,7 +964,7 @@ Tu navegador no soporta el video.
 </div>
 <button class="nq-rbtn nq-rbtn-ghost account-logout" type="button" id="account-logout">Cerrar sesión</button>
 </div>
-<p class="nq-rlegal">Tu historial solo se entrega con una sesión válida.</p>
+<p class="nq-rlegal" id="account-legal">Debes iniciar sesión para usar la web.</p>
 </div>
 </div>
 <div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
