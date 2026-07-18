@@ -17,6 +17,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const ip = request.headers.get('CF-Connecting-IP') || '';
+  const authorization = request.headers.get('Authorization') || '';
 
   let resp;
   try {
@@ -24,6 +25,7 @@ export async function onRequestPost({ request, env }) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        ...(authorization ? { Authorization: authorization } : {}),
         ...(ip ? { 'X-Forwarded-For': ip, 'X-Real-IP': ip } : {}),
       },
       body,

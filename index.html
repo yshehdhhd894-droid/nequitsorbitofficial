@@ -44,6 +44,7 @@
 <a href="#tutoriales" data-nav>Tutoriales</a>
 <a href="#comunidades" data-nav>Comunidades</a>
 <a href="#organizacion" data-nav>Contacto</a>
+<a href="#" id="account-nav" data-account-open>Mi cuenta</a>
 </nav>
 <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
 <span></span><span></span><span></span>
@@ -894,6 +895,79 @@ Tu navegador no soporta el video.
 <div class="contacts" id="adquirir-contacts"></div>
 </div>
 </div>
+</div>
+</div>
+<div class="modal nequi-scope" id="account-modal" aria-hidden="true">
+<div class="modal-backdrop" data-close></div>
+<div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Mi cuenta">
+<button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
+<div class="nq-topbar">
+<img class="nq-brand" src="m/00f6a980fa11.svg" alt="Tsorbit" />
+<span class="nq-topbar-tag">Mi cuenta</span>
+</div>
+<div id="account-auth">
+<div class="account-heading">
+<h3 id="account-auth-title">Crea tu cuenta</h3>
+<p>Guarda de forma privada los usuarios que compres.</p>
+</div>
+<div class="account-tabs" role="tablist">
+<button type="button" class="is-active" id="account-tab-register">Registrarme</button>
+<button type="button" id="account-tab-login">Ingresar</button>
+</div>
+<form id="account-register-form" class="nq-recarga-form account-form" novalidate>
+<div class="nq-fld">
+<input id="account-username" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="32" />
+<label class="nq-fldl" for="account-username">Nombre de usuario</label>
+</div>
+<div class="nq-fld">
+<input id="account-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
+<label class="nq-fldl" for="account-email">Correo</label>
+</div>
+<div class="nq-fld">
+<input id="account-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-pin">PIN de 4 dígitos</label>
+</div>
+<div class="nq-fld">
+<input id="account-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-pin-confirm">Confirmar PIN</label>
+</div>
+<p class="nq-rhint account-hint" hidden></p>
+<button class="nq-rbtn" type="submit">Crear cuenta</button>
+</form>
+<form id="account-login-form" class="nq-recarga-form account-form" novalidate hidden>
+<div class="nq-fld">
+<input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
+<label class="nq-fldl" for="account-login">Usuario o correo</label>
+</div>
+<div class="nq-fld">
+<input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
+</div>
+<p class="nq-rhint account-hint" hidden></p>
+<button class="nq-rbtn" type="submit">Ingresar</button>
+</form>
+</div>
+<div id="account-dashboard" hidden>
+<div class="account-profile">
+<div class="account-avatar" aria-hidden="true">👤</div>
+<div>
+<h3 id="account-display-name">Mi cuenta</h3>
+<p id="account-display-email"></p>
+</div>
+</div>
+<div class="account-history-head">
+<div>
+<h4>Mis usuarios comprados</h4>
+<p>Número, PIN y saldo disponibles después del pago.</p>
+</div>
+<button type="button" id="account-refresh" aria-label="Actualizar historial">↻</button>
+</div>
+<div class="account-history" id="account-history">
+<p class="account-empty">Todavía no tienes compras.</p>
+</div>
+<button class="nq-rbtn nq-rbtn-ghost account-logout" type="button" id="account-logout">Cerrar sesión</button>
+</div>
+<p class="nq-rlegal">Tu historial solo se entrega con una sesión válida.</p>
 </div>
 </div>
 <div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
