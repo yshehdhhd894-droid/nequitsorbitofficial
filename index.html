@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="m/467df82bc779.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Manrope:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Creepster&family=Manrope:wght@400;500;600;700;800&family=Nosifer&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <script src="protection.js" defer></script>
 <script src="app.js" defer></script>
@@ -81,6 +81,18 @@
 <div class="app-badge"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
 <h3 class="app-name">G5</h3>
 <span class="app-cta">Entrar →</span>
+</button>
+<button class="app-card app-card-dox tilt3d" type="button" data-open="dox-modal" aria-haspopup="dialog">
+<div class="app-glow dox-glow"></div>
+<div class="app-badge dox-badge"><img src="m/19bc729deca0.svg" alt="DOX BOT" /></div>
+<h3 class="app-name dox-name">DOX BOT</h3>
+<span class="app-cta dox-cta">Abrir →</span>
+</button>
+<button class="app-card tilt3d" type="button" id="modificaciones-apps" data-telegram-direct>
+<div class="app-glow"></div>
+<div class="app-badge"><img src="m/3192a23c5a48.svg" alt="Modificaciones" /></div>
+<h3 class="app-name">Modificaciones de Apps Codes y APIs</h3>
+<span class="app-cta">Telegram →</span>
 </button>
 </div>
 </section>
@@ -358,30 +370,36 @@
 <div class="app-hero-badge g5"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
 <h1 class="hero-title"><span class="grad">G5</span></h1>
 <p class="app-tag">Acceso directo por contacto</p>
-<span class="app-version">Solo mediante WhatsApp</span>
+<span class="app-version">WhatsApp o Telegram</span>
 </div>
 <div class="g5-contact-panel tilt3d">
 <div class="g5-contact-head">
 <span class="g5-contact-label">Contacto oficial</span>
 <h2 class="g5-contact-title">AXONDEVUI</h2>
-<p class="g5-contact-sub">Escríbenos por WhatsApp para adquirir G5.</p>
+<p class="g5-contact-sub">Elige un canal para adquirir G5.</p>
 </div>
-<a
-class="g5-wa-btn"
-id="g5-whatsapp"
-href="#"
-target="_blank"
-rel="noopener noreferrer"
->
-<span class="g5-wa-ico" aria-hidden="true">
+<div class="g5-channel-list">
+<a class="g5-channel g5-wa" id="g5-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+<span class="g5-channel-ico" aria-hidden="true">
 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
 </span>
-<span class="g5-wa-meta">
-<span class="g5-wa-name">WhatsApp</span>
-<span class="g5-wa-num">3180135842</span>
+<span class="g5-channel-meta">
+<span class="g5-channel-name">WhatsApp</span>
+<span class="g5-channel-sub">Contactar ahora</span>
 </span>
-<span class="g5-wa-chevron">→</span>
+<span class="g5-channel-chevron">→</span>
 </a>
+<a class="g5-channel g5-tg" id="g5-telegram" href="#" target="_blank" rel="noopener noreferrer">
+<span class="g5-channel-ico" aria-hidden="true">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+</span>
+<span class="g5-channel-meta">
+<span class="g5-channel-name">Telegram</span>
+<span class="g5-channel-sub">AXONDEVUI</span>
+</span>
+<span class="g5-channel-chevron">→</span>
+</a>
+</div>
 </div>
 </section>
 </div>
@@ -483,6 +501,40 @@ Tu navegador no soporta el video.
 </video>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="modal dox-modal" id="dox-modal" aria-hidden="true">
+<div class="modal-backdrop dox-backdrop" data-close></div>
+<div class="modal-card dox-card" role="dialog" aria-modal="true" aria-label="DOX BOT">
+<button class="modal-close dox-close" data-close aria-label="Cerrar">✕</button>
+<div class="dox-modal-head">
+<div class="dox-modal-badge" aria-hidden="true">
+<img src="m/19bc729deca0.svg" alt="" />
+</div>
+<p class="dox-whisper">no mires atrás…</p>
+<h3 class="dox-modal-title">DOX BOT</h3>
+<p class="dox-modal-sub">Elige cómo contactar. El rastro no se borra.</p>
+</div>
+<div class="dox-channels">
+<a class="dox-channel dox-wa" id="dox-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+<span class="dox-channel-ico" aria-hidden="true">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
+</span>
+<span class="dox-channel-meta">
+<span class="dox-channel-name">WhatsApp</span>
+<span class="dox-channel-sub">Contactar ahora</span>
+</span>
+</a>
+<a class="dox-channel dox-tg" id="dox-telegram" href="#" target="_blank" rel="noopener noreferrer">
+<span class="dox-channel-ico" aria-hidden="true">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+</span>
+<span class="dox-channel-meta">
+<span class="dox-channel-name">Telegram</span>
+<span class="dox-channel-sub">AXONDEVUI</span>
+</span>
+</a>
 </div>
 </div>
 </div>
