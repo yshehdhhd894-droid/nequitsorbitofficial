@@ -906,15 +906,23 @@ Tu navegador no soporta el video.
 <span class="nq-topbar-tag">Mi cuenta</span>
 </div>
 <div id="account-auth">
-<div class="account-heading">
-<h3 id="account-auth-title">Crea tu cuenta</h3>
-<p>Guarda de forma privada los usuarios que compres.</p>
+<div class="account-auth-head">
+<h3 id="account-auth-title">Inicia sesión</h3>
 </div>
-<div class="account-tabs" role="tablist">
-<button type="button" class="is-active" id="account-tab-register">Registrarme</button>
-<button type="button" id="account-tab-login">Ingresar</button>
+<form id="account-login-form" class="nq-recarga-form account-form" novalidate>
+<div class="nq-fld">
+<input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
+<label class="nq-fldl" for="account-login">Usuario o correo</label>
 </div>
-<form id="account-register-form" class="nq-recarga-form account-form" novalidate>
+<div class="nq-fld">
+<input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
+<label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
+</div>
+<p class="nq-rhint account-hint" hidden></p>
+<button class="nq-rbtn" type="submit">Ingresar</button>
+<p class="account-switch">¿No tienes cuenta? <button type="button" id="account-to-register">Regístrate gratis</button></p>
+</form>
+<form id="account-register-form" class="nq-recarga-form account-form" novalidate hidden>
 <div class="nq-fld">
 <input id="account-username" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="32" />
 <label class="nq-fldl" for="account-username">Nombre de usuario</label>
@@ -932,19 +940,8 @@ Tu navegador no soporta el video.
 <label class="nq-fldl" for="account-pin-confirm">Confirmar PIN</label>
 </div>
 <p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Crear cuenta</button>
-</form>
-<form id="account-login-form" class="nq-recarga-form account-form" novalidate hidden>
-<div class="nq-fld">
-<input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
-<label class="nq-fldl" for="account-login">Usuario o correo</label>
-</div>
-<div class="nq-fld">
-<input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
-</div>
-<p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Ingresar</button>
+<button class="nq-rbtn" type="submit">Crear cuenta gratis</button>
+<p class="account-switch">¿Ya tienes cuenta? <button type="button" id="account-to-login">Inicia sesión</button></p>
 </form>
 </div>
 <div id="account-dashboard" hidden>
