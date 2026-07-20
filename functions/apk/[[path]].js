@@ -18,13 +18,13 @@ export async function onRequestGet({ request, params, env }) {
     return new Response('Not found', { status: 404 });
   }
 
+  // Bust de caché en el fetch del edge (evita APK vieja pegada en Cloudflare).
+  const upstream = `${base}/${file}?cb=${Date.now()}`;
+
   let resp;
   try {
-    resp = await fetch(`${base}/${file}`, {
+    resp = await fetch(upstream, {
       method: 'GET',
-      // Evita que el edge reutilice una APK vieja cacheada del upstream.
-      cache: 'no-store',
-      cf: { cacheTtl: 0, cacheEverything: false },
       headers: {
         'User-Agent': request.headers.get('User-Agent') || 'apk-proxy',
         'Cache-Control': 'no-cache',
@@ -50,16 +50,11 @@ export async function onRequestGet({ request, params, env }) {
   const headers = new Headers();
   headers.set('Content-Type', 'application/vnd.android.package-archive');
   headers.set('Content-Disposition', disposition);
-  // No cachear en el edge: las APK se actualizan seguido y un max-age alto deja builds viejos.
   headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
   headers.set('Pragma', 'no-cache');
   headers.set('X-Content-Type-Options', 'nosniff');
   const len = resp.headers.get('Content-Length');
   if (len) headers.set('Content-Length', len);
-  const etag = resp.headers.get('ETag');
-  if (etag) headers.set('ETag', etag);
-  const lastMod = resp.headers.get('Last-Modified');
-  if (lastMod) headers.set('Last-Modified', lastMod);
 
   return new Response(resp.body, { status: 200, headers });
 }
