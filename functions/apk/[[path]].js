@@ -43,10 +43,16 @@ export async function onRequestGet({ request, params, env }) {
   const headers = new Headers();
   headers.set('Content-Type', 'application/vnd.android.package-archive');
   headers.set('Content-Disposition', disposition);
-  headers.set('Cache-Control', 'public, max-age=3600');
+  // No cachear en el edge: las APK se actualizan seguido y un max-age alto deja builds viejos.
+  headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  headers.set('Pragma', 'no-cache');
   headers.set('X-Content-Type-Options', 'nosniff');
   const len = resp.headers.get('Content-Length');
   if (len) headers.set('Content-Length', len);
+  const etag = resp.headers.get('ETag');
+  if (etag) headers.set('ETag', etag);
+  const lastMod = resp.headers.get('Last-Modified');
+  if (lastMod) headers.set('Last-Modified', lastMod);
 
   return new Response(resp.body, { status: 200, headers });
 }
