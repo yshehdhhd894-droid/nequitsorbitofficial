@@ -31,8 +31,11 @@ export async function onRequestGet({ request, params, env }) {
         Pragma: 'no-cache',
       },
     });
-  } catch (_) {
-    return new Response('Servicio de descarga no disponible', { status: 503 });
+  } catch (err) {
+    const msg = err && err.message ? String(err.message) : 'unknown';
+    return new Response(`Servicio de descarga no disponible: ${msg}`, {
+      status: 503,
+    });
   }
 
   if (!resp.ok) {
