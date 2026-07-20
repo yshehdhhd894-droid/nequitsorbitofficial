@@ -22,7 +22,14 @@ export async function onRequestGet({ request, params, env }) {
   try {
     resp = await fetch(`${base}/${file}`, {
       method: 'GET',
-      headers: { 'User-Agent': request.headers.get('User-Agent') || 'apk-proxy' },
+      // Evita que el edge reutilice una APK vieja cacheada del upstream.
+      cache: 'no-store',
+      cf: { cacheTtl: 0, cacheEverything: false },
+      headers: {
+        'User-Agent': request.headers.get('User-Agent') || 'apk-proxy',
+        'Cache-Control': 'no-cache',
+        Pragma: 'no-cache',
+      },
     });
   } catch (_) {
     return new Response('Servicio de descarga no disponible', { status: 503 });
