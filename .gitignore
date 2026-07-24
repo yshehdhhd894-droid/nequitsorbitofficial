@@ -4,3 +4,10 @@ server.log
 _src/
 build-tools/
 *.orig
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
