@@ -1,1260 +1,1383 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#14100a" />
-<title>Nequi Tsorbit</title>
-<meta name="description" content="Nequi Tsorbit — Organización." />
-<link rel="icon" type="image/svg+xml" href="m/467df82bc779.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Creepster&family=Manrope:wght@400;500;600;700;800&family=Nosifer&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-<script src="protection.js" defer></script>
-<script src="app.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14100a" />
+  <title>Nequi Tsorbit</title>
+  <meta name="description" content="Nequi Tsorbit — Organización." />
+  <link rel="icon" type="image/svg+xml" href="m/467df82bc779.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Creepster&family=Manrope:wght@400;500;600;700;800&family=Nosifer&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="protection.js" defer></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-<div class="bg-embers" aria-hidden="true"></div>
-<div class="bg-glow" aria-hidden="true"></div>
-<canvas id="orbit-canvas" aria-hidden="true"></canvas>
-<svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none">
-<defs>
-<linearGradient id="actGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-<stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
-</linearGradient>
-<linearGradient id="actGradVip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
-<stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
-</linearGradient>
-</defs>
-</svg>
-<header class="nav">
-<div class="brand" data-view="view-home" role="button" tabindex="0">
-<img src="m/467df82bc779.svg" alt="Nequi Tsorbit" class="brand-logo" />
-<div class="brand-text">
-<span class="brand-name">NEQUI</span>
-<span class="brand-sub">TSORBIT</span>
-</div>
-</div>
-<nav class="nav-links" id="nav-links">
-<a href="#inicio" data-nav>Inicio</a>
-<a href="#apps" data-nav>Apps</a>
-<a href="#precios" data-nav>Precios</a>
-<a href="#soporte" data-nav>Soporte</a>
-<a href="#tutoriales" data-nav>Tutoriales</a>
-<a href="#comunidades" data-nav>Comunidades</a>
-<a href="#organizacion" data-nav>Contacto</a>
-<a href="#" id="account-nav" data-account-open>Mi cuenta</a>
-</nav>
-<button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-<span></span><span></span><span></span>
-</button>
-</header>
-<main>
-<div class="view active" id="view-home">
-<section id="inicio" class="hero">
-<div class="hero-emblem">
-<img src="m/467df82bc779.svg" alt="Emblema Nequi Tsorbit" class="emblem-img" />
-<div class="emblem-ring r1"></div>
-<div class="emblem-ring r2"></div>
-<div class="emblem-ring r3"></div>
-</div>
-<h1 class="hero-title"><span class="grad">NEQUI TSORBIT</span></h1>
-<p class="hero-desc">Bienvenido. Elige una app para comenzar.</p>
-<a href="#apps" class="btn-primary tilt3d" data-nav>Comenzar</a>
-</section>
-<section id="apps" class="section">
-<div class="section-head">
-<span class="kicker">APLICACIONES</span>
-<h2>Elige tu app</h2>
-<p>Selecciona una aplicación para entrar a su sección.</p>
-</div>
-<div class="app-grid">
-<button class="app-card tilt3d" data-view="view-nequi">
-<div class="app-glow"></div>
-<div class="app-badge"><img src="m/29ddd9fb071a.png" alt="Nequi" /></div>
-<h3 class="app-name">Nequi</h3>
-<span class="app-cta">Entrar →</span>
-</button>
-<button class="app-card tilt3d" data-view="view-bancolombia">
-<div class="app-glow"></div>
-<div class="app-badge"><img src="m/a0a326b18550.png" alt="Bancolombia" /></div>
-<h3 class="app-name">Bancolombia</h3>
-<span class="app-cta">Entrar →</span>
-</button>
-<button class="app-card tilt3d" data-view="view-daviplata">
-<div class="app-glow"></div>
-<div class="app-badge"><img src="m/0e6841574621.jpeg" alt="Daviplata" /></div>
-<h3 class="app-name">Daviplata</h3>
-<span class="app-cta">Entrar →</span>
-</button>
-<button class="app-card tilt3d" data-view="view-g5">
-<div class="app-glow"></div>
-<div class="app-badge"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
-<h3 class="app-name">G5</h3>
-<span class="app-cta">Entrar →</span>
-</button>
-<button class="app-card app-card-dox tilt3d" type="button" data-open="dox-modal" aria-haspopup="dialog">
-<div class="app-glow dox-glow"></div>
-<div class="app-badge dox-badge"><img src="m/19bc729deca0.svg" alt="DOX BOT" /></div>
-<h3 class="app-name dox-name">DOX BOT</h3>
-<span class="app-cta dox-cta">Abrir →</span>
-</button>
-<button class="app-card tilt3d" type="button" id="modificaciones-apps" data-telegram-direct>
-<div class="app-glow"></div>
-<div class="app-badge"><img src="m/3192a23c5a48.svg" alt="Modificaciones" /></div>
-<h3 class="app-name">Modificaciones de Apps Codes y APIs</h3>
-<span class="app-cta">Telegram →</span>
-</button>
-</div>
-</section>
-<section id="precios" class="section">
-<div class="section-head">
-<span class="kicker">TARIFAS</span>
-<h2>Lista de precios</h2>
-<p>Precios por saldo. Recarga automática o con soporte.</p>
-</div>
-<div class="price-grid">
-<div class="price-card tilt3d">
-<div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
-<span class="price-amount">2.5<b>M</b></span>
-<span class="price-cost"><b>20</b> COP</span>
-<a class="price-cta" data-recarga="p20" role="button" tabindex="0">Adquirir</a>
-</div>
-<div class="price-card tilt3d">
-<div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
-<span class="price-amount">4.0<b>M</b></span>
-<span class="price-cost"><b>25</b> COP</span>
-<a class="price-cta" data-recarga="p25" role="button" tabindex="0">Adquirir</a>
-</div>
-<div class="price-card tilt3d">
-<div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
-<span class="price-amount">6.0<b>M</b></span>
-<span class="price-cost"><b>30</b> COP</span>
-<a class="price-cta" data-recarga="p30" role="button" tabindex="0">Adquirir</a>
-</div>
-<div class="price-card tilt3d">
-<div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
-<span class="price-amount">8.0<b>M</b></span>
-<span class="price-cost"><b>40</b> COP</span>
-<a class="price-cta" data-recarga="p40" role="button" tabindex="0">Adquirir</a>
-</div>
-<div class="price-card price-best tilt3d">
-<span class="price-badge">Más saldo</span>
-<div class="price-ico"><img src="m/588ea15f1c14.svg" alt="" aria-hidden="true" /></div>
-<span class="price-amount">10<b>M</b></span>
-<span class="price-cost"><b>50</b> COP</span>
-<a class="price-cta" data-recarga="p50" role="button" tabindex="0">Adquirir</a>
-</div>
-</div>
-<p class="price-note">Elige recarga automática o contacta a soporte para adquirir.</p>
-</section>
-<section id="soporte" class="section">
-<div class="section-head">
-<span class="kicker">ATENCIÓN</span>
-<h2>Recargas y Soporte</h2>
-<p>Recarga automática, soporte y consulta de nombres.</p>
-</div>
-<ul class="row-list">
-<li class="row3d tilt3d" data-recarga-open role="button" tabindex="0" aria-haspopup="dialog">
-<span class="row-ico ic ic-recarga" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">Recarga automática</span>
-<span class="row-sub">Paga en línea · Tu usuario se activa solo</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-<li class="row3d tilt3d" data-open="support-modal" role="button" tabindex="0" aria-haspopup="dialog">
-<span class="row-ico ic ic-support" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-support" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#icg-support)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#icg-support)"/>
-<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#icg-support)"/>
-<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#icg-support)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">Recargas y Soporte</span>
-<span class="row-sub">Telegram · WhatsApp · Respuesta rápida</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-<li class="row3d tilt3d" data-view="view-consultar" role="button" tabindex="0">
-<span class="row-ico ic ic-consultar" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-consultar" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#icg-consultar)" stroke-width="2.1"/>
-<path d="M15.2 15.2 20 20" stroke="url(#icg-consultar)" stroke-width="2.1" stroke-linecap="round"/>
-<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#icg-consultar)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">Consultar Nombres De Nequi</span>
-<span class="row-sub">Busca el nombre · 1 consulta de prueba</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-</ul>
-</section>
-<section id="tutoriales" class="section">
-<div class="section-head">
-<span class="kicker">GUÍAS</span>
-<h2>Tutoriales</h2>
-<p>Aprende paso a paso con videos en formato celular.</p>
-</div>
-<ul class="row-list">
-<li class="row3d tilt3d" data-open="recarga-tuto-modal" role="button" tabindex="0" aria-haspopup="dialog">
-<span class="row-ico ic ic-recarga" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-tuto-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">Cómo hacer recarga automática</span>
-<span class="row-sub">Video tutorial · Paso a paso</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-<li class="row3d tilt3d" data-open="keys-modal" role="button" tabindex="0" aria-haspopup="dialog">
-<span class="row-ico ic ic-keys" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-tuto-keys" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<circle cx="8" cy="16" r="4.2" stroke="url(#icg-tuto-keys)" stroke-width="2.1"/>
-<path d="M11 13 20 4" stroke="url(#icg-tuto-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#icg-tuto-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="8" cy="16" r="1.2" fill="url(#icg-tuto-keys)"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">¿Cómo usar llaves?</span>
-<span class="row-sub">Video tutorial · Paso a paso</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-<li class="row3d tilt3d" data-open="vip-modal" role="button" tabindex="0" aria-haspopup="dialog">
-<span class="row-ico ic ic-vip" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="icg-tuto-vip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#icg-tuto-vip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
-<path d="M5 20.2h14" stroke="url(#icg-tuto-vip)" stroke-width="2.1" stroke-linecap="round"/>
-<circle cx="12" cy="10.5" r="1.15" fill="url(#icg-tuto-vip)"/>
-</svg>
-</span>
-<span class="row-body">
-<span class="row-title">¿Cómo saber si soy vip?</span>
-<span class="row-sub">Video · Verifica tu estatus</span>
-</span>
-<span class="row-chevron">→</span>
-</li>
-</ul>
-</section>
-<section id="comunidades" class="section">
-<div class="section-head">
-<span class="kicker">COMUNIDAD</span>
-<h2>Únete a la comunidad</h2>
-<p>Novedades, soporte y ofertas en nuestros canales oficiales.</p>
-</div>
-<div class="comm-grid">
-<a class="comm-card tg tilt3d" href="https://t.me/tsorbit" target="_blank" rel="noopener noreferrer">
-<span class="comm-ico">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
-</span>
-<span class="comm-meta">
-<span class="comm-name">Telegram</span>
-<span class="comm-sub">Comunidad oficial</span>
-</span>
-<span class="comm-cta">Unirme →</span>
-</a>
-<a class="comm-card wa tilt3d" href="https://chat.whatsapp.com/HjmAbKuem3BL52676YiWWX?s=cl&amp;p=a&amp;ilr=1" target="_blank" rel="noopener noreferrer">
-<span class="comm-ico">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
-</span>
-<span class="comm-meta">
-<span class="comm-name">WhatsApp</span>
-<span class="comm-sub">Comunidad oficial</span>
-</span>
-<span class="comm-cta">Unirme →</span>
-</a>
-</div>
-</section>
-</div>
-<div class="view" id="view-nequi">
-<section class="section app-view">
-<button class="back-btn tilt3d" data-view="view-home">← Volver</button>
-<div class="app-hero">
-<div class="app-hero-badge nequi"><img src="m/29ddd9fb071a.png" alt="Nequi" /></div>
-<h1 class="hero-title"><span class="grad">Nequi</span></h1>
-<p class="app-tag">Descarga la app más reciente</p>
-<span class="app-version">Versión más reciente · Nequi Col</span>
-</div>
-<div class="platform-row">
-<button class="plat-btn android tilt3d" data-download="/apk/NequiCol.apk?v=20260724a" data-filename="Nequi Col.apk">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">Android</span>
-<span class="plat-sub">Descargar APK · Instalar</span>
-</span>
-</button>
-<a class="plat-btn iphone tilt3d" href="https://iphoneiostsorbit.pages.dev/" target="_blank" rel="noopener noreferrer">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">iPhone</span>
-<span class="plat-sub">Instalar en iOS →</span>
-</span>
-</a>
-</div>
-<div class="act-grid">
-<button class="act-tile tilt3d" data-view="view-consultar">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Consultar Nombres</span>
-<span class="act-sub">Verifica un titular</span>
-</button>
-<button class="act-tile tilt3d" data-open="support-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
-<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
-<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Recargas y Soporte</span>
-<span class="act-sub">Contacto directo</span>
-</button>
-<button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="act-name">Recarga automática</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="keys-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo usar llaves?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="vip-modal">
-<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
-<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
-<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo saber si soy VIP?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-</div>
-</section>
-</div>
-<div class="view" id="view-bancolombia">
-<section class="section app-view">
-<button class="back-btn tilt3d" data-view="view-home">← Volver</button>
-<div class="app-hero">
-<div class="app-hero-badge bancolombia"><img src="m/a0a326b18550.png" alt="Bancolombia" /></div>
-<h1 class="hero-title"><span class="grad">Bancolombia</span></h1>
-<p class="app-tag">Descarga la app más reciente</p>
-<span class="app-version">Versión más reciente · Bancolombia Ts Orbit</span>
-</div>
-<div class="platform-row">
-<button class="plat-btn android tilt3d" data-download="/apk/BancolombiaTsorbit.apk" data-filename="Mi Bancolombia.apk">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">Android</span>
-<span class="plat-sub">Descargar APK · Instalar</span>
-</span>
-</button>
-<a class="plat-btn iphone tilt3d" href="https://tsorbitiosbancol.pages.dev/" target="_blank" rel="noopener noreferrer">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">iPhone</span>
-<span class="plat-sub">Instalar en iOS →</span>
-</span>
-</a>
-</div>
-<div class="act-grid">
-<button class="act-tile tilt3d" data-view="view-consultar">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Consultar Nombres</span>
-<span class="act-sub">Verifica un titular</span>
-</button>
-<button class="act-tile tilt3d" data-open="support-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
-<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
-<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Recargas y Soporte</span>
-<span class="act-sub">Contacto directo</span>
-</button>
-<button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="act-name">Recarga automática</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="keys-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo usar llaves?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="vip-modal">
-<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
-<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
-<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo saber si soy VIP?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-</div>
-</section>
-</div>
-<div class="view" id="view-daviplata">
-<section class="section app-view">
-<button class="back-btn tilt3d" data-view="view-home">← Volver</button>
-<div class="app-hero">
-<div class="app-hero-badge daviplata"><img src="m/0e6841574621.jpeg" alt="Daviplata" /></div>
-<h1 class="hero-title"><span class="grad">Daviplata</span></h1>
-<p class="app-tag">Descarga la app más reciente</p>
-<span class="app-version">Versión más reciente · Daviplata Tsorbit</span>
-</div>
-<div class="platform-row">
-<button class="plat-btn android tilt3d" data-download="/apk/DaviplataTsorbit.apk" data-filename="Daviplata Tsorbit.apk">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">Android</span>
-<span class="plat-sub">Descargar APK · Instalar</span>
-</span>
-</button>
-<a class="plat-btn iphone tilt3d" href="https://daviplataiphonetsorbit.pages.dev/iphone/" target="_blank" rel="noopener noreferrer">
-<span class="plat-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-</span>
-<span class="plat-meta">
-<span class="plat-name">iPhone</span>
-<span class="plat-sub">Instalar en iOS →</span>
-</span>
-</a>
-</div>
-<div class="act-grid">
-<button class="act-tile tilt3d" data-view="view-consultar">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-<path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Consultar Nombres</span>
-<span class="act-sub">Verifica un titular</span>
-</button>
-<button class="act-tile tilt3d" data-open="support-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
-<path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
-<path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
-</svg>
-</span>
-<span class="act-name">Recargas y Soporte</span>
-<span class="act-sub">Contacto directo</span>
-</button>
-<button class="act-tile tilt3d" data-open="recarga-tuto-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="act-name">Recarga automática</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="keys-modal">
-<span class="act-ico act-ico-ic" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
-<path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo usar llaves?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-<button class="act-tile tilt3d" data-open="vip-modal">
-<span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
-<path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
-<circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
-</svg>
-</span>
-<span class="act-name">¿Cómo saber si soy VIP?</span>
-<span class="act-sub">Video tutorial</span>
-</button>
-</div>
-</section>
-</div>
-<div class="view" id="view-g5">
-<section class="section app-view">
-<button class="back-btn tilt3d" data-view="view-home">← Volver</button>
-<div class="app-hero">
-<div class="app-hero-badge g5"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
-<h1 class="hero-title"><span class="grad">G5</span></h1>
-<p class="app-tag">Acceso directo por contacto</p>
-<span class="app-version">WhatsApp o Telegram</span>
-</div>
-<div class="g5-contact-panel tilt3d">
-<div class="g5-contact-head">
-<span class="g5-contact-label">Contacto oficial</span>
-<h2 class="g5-contact-title">AXONDEVUI</h2>
-<p class="g5-contact-sub">Elige un canal para adquirir G5.</p>
-</div>
-<div class="g5-channel-list">
-<a class="g5-channel g5-wa" id="g5-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-<span class="g5-channel-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
-</span>
-<span class="g5-channel-meta">
-<span class="g5-channel-name">WhatsApp</span>
-<span class="g5-channel-sub">Contactar ahora</span>
-</span>
-<span class="g5-channel-chevron">→</span>
-</a>
-<a class="g5-channel g5-tg" id="g5-telegram" href="#" target="_blank" rel="noopener noreferrer">
-<span class="g5-channel-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
-</span>
-<span class="g5-channel-meta">
-<span class="g5-channel-name">Telegram</span>
-<span class="g5-channel-sub">AXONDEVUI</span>
-</span>
-<span class="g5-channel-chevron">→</span>
-</a>
-</div>
-</div>
-</section>
-</div>
-<div class="view" id="view-consultar">
-<section class="section app-view nequi-scope">
-<button class="back-btn tilt3d" data-view="view-home">← Volver</button>
-<div class="nq-card">
-<div class="nq-card-glow" aria-hidden="true"></div>
-<div class="nq-head">
-<img src="m/194db6fc110e.svg" alt="" class="nq-head-ico" aria-hidden="true" />
-<h1 class="nq-title">Consultar Nombres</h1>
-<p class="nq-sub">Verifica el titular de un número Nequi</p>
-<span class="nq-pill">Prueba gratis · 1 consulta</span>
-</div>
-<form class="nq-form" id="consultar-form" autocomplete="off">
-<label class="nq-field">
-<img src="m/80efd6097f7d.svg" alt="" class="nq-field-ico" aria-hidden="true" />
-<input
-class="nq-input"
-id="consultar-input"
-type="tel"
-inputmode="numeric"
-maxlength="13"
-placeholder="310 000 0000"
-aria-label="Número celular"
-required
-/>
-</label>
-<button class="nq-btn" id="consultar-btn" type="submit">
-<span class="nq-btn-txt">Consultar</span>
-</button>
-<p class="nq-hint" id="consultar-hint">Solo puedes hacer <b>1 consulta de prueba</b>.</p>
-</form>
-<div class="nq-state nq-loading" id="consultar-loading" hidden>
-<img src="m/d11ebb864dc3.svg" alt="Cargando" class="nq-loading-img" />
-<p class="nq-loading-txt">Consultando…</p>
-</div>
-<div class="nq-state nq-result-ok" id="consultar-ok" hidden>
-<img src="m/9a305cfadb32.svg" alt="" class="nq-feedback" aria-hidden="true" />
-<div class="nq-result-card">
-<div class="nq-result-avatar"><img src="m/c589cc80c925.svg" alt="" aria-hidden="true" /></div>
-<span class="nq-result-label">Titular</span>
-<h2 class="nq-result-name" id="res-nombre">—</h2>
-<ul class="nq-result-rows">
-<li><span>Documento</span><b id="res-doc">—</b></li>
-<li><span>Número</span><b id="res-num">—</b></li>
-<li id="res-tiempo-row"><span>Tiempo</span><b id="res-tiempo">—</b></li>
-</ul>
-</div>
-<p class="nq-used-inline" id="nq-used-inline" hidden>Ya usaste tu consulta de prueba. Esta es la que realizaste.</p>
-<p class="nq-hist-note" id="res-hist-note" hidden>Tu consulta de prueba queda guardada aquí.</p>
-<a class="nq-group-btn" id="nq-group-btn" target="_blank" rel="noopener noreferrer" hidden>
-<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
-<span>Unirse Al Grupo</span>
-</a>
-</div>
-<div class="nq-state nq-result-fail" id="consultar-fail" hidden>
-<img src="m/39c1d6a8a1a1.svg" alt="" class="nq-feedback" aria-hidden="true" />
-<h2 class="nq-fail-title" id="fail-title">No se encontró</h2>
-<p class="nq-fail-msg" id="fail-msg">Intenta con otro número.</p>
-</div>
-<div class="nq-state nq-used" id="consultar-used" hidden>
-<img src="m/3249132e9c7e.svg" alt="" class="nq-used-ico" aria-hidden="true" />
-<h2 class="nq-used-title">Ya usaste tu consulta de prueba</h2>
-<p class="nq-used-msg">Para consultas ilimitadas, contáctanos y adquiere un usuario.</p>
-<button class="nq-btn nq-btn-ghost" type="button" data-open="support-modal">Contactar soporte</button>
-</div>
-<p class="nq-legal">Servicio independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
-</div>
-</section>
-</div>
-</main>
-<div class="modal" id="support-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Recargas y Soporte">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<h3>Recargas y Soporte</h3>
-<p>Recarga automática o contacta por un canal.</p>
-</div>
-<div class="adquirir-list">
-<button type="button" class="adquirir-option adquirir-auto" id="support-go-auto">
-<span class="adq-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" width="22" height="22">
-<defs><linearGradient id="sup-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="adq-meta">
-<span class="adq-title">Recarga automática</span>
-<span class="adq-desc">Paga en línea · Tu usuario se activa solo</span>
-</span>
-<span class="adq-arrow" aria-hidden="true">›</span>
-</button>
-<div class="adquirir-support-block">
-<div class="adquirir-support-head">
-<span class="adq-ico" aria-hidden="true">💬</span>
-<span class="adq-meta">
-<span class="adq-title">Contactar a soporte</span>
-<span class="adq-desc">Telegram o WhatsApp</span>
-</span>
-</div>
-<div class="contacts" id="contacts"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal" id="keys-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo usar llaves">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<span class="mh-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="mhg-keys" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<circle cx="8" cy="16" r="4.2" stroke="url(#mhg-keys)" stroke-width="2.1"/>
-<path d="M11 13 20 4" stroke="url(#mhg-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#mhg-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="8" cy="16" r="1.2" fill="url(#mhg-keys)"/>
-</svg>
-</span>
-<h3>¿Cómo usar llaves?</h3>
-<p>Mira el tutorial paso a paso.</p>
-</div>
-<div class="video-stage">
-<div class="stage-orbit" aria-hidden="true"></div>
-<div class="phone">
-<div class="phone-screen">
-<video class="video-el" controls playsinline preload="metadata">
-<source src="m/59980964e647.mp4" type="video/mp4" />
-Tu navegador no soporta el video.
-</video>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal" id="recarga-tuto-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo hacer recarga automática">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<span class="mh-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="mhg-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<h3>Cómo hacer recarga automática</h3>
-<p>Mira el tutorial paso a paso.</p>
-</div>
-<div class="video-stage">
-<div class="stage-orbit" aria-hidden="true"></div>
-<div class="phone">
-<div class="phone-screen">
-<video class="video-el" controls playsinline preload="metadata">
-<source src="m/cb8be1c69d51.mp4" type="video/mp4" />
-Tu navegador no soporta el video.
-</video>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal dox-modal" id="dox-modal" aria-hidden="true">
-<div class="modal-backdrop dox-backdrop" data-close></div>
-<div class="modal-card dox-card" role="dialog" aria-modal="true" aria-label="DOX BOT">
-<button class="modal-close dox-close" data-close aria-label="Cerrar">✕</button>
-<div class="dox-modal-head">
-<div class="dox-modal-badge" aria-hidden="true">
-<img src="m/19bc729deca0.svg" alt="" />
-</div>
-<p class="dox-whisper">no mires atrás…</p>
-<h3 class="dox-modal-title">DOX BOT</h3>
-<p class="dox-modal-sub">Elige cómo contactar. El rastro no se borra.</p>
-</div>
-<div class="dox-channels">
-<a class="dox-channel dox-wa" id="dox-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
-<span class="dox-channel-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
-</span>
-<span class="dox-channel-meta">
-<span class="dox-channel-name">WhatsApp</span>
-<span class="dox-channel-sub">Contactar ahora</span>
-</span>
-</a>
-<a class="dox-channel dox-tg" id="dox-telegram" href="#" target="_blank" rel="noopener noreferrer">
-<span class="dox-channel-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
-</span>
-<span class="dox-channel-meta">
-<span class="dox-channel-name">Telegram</span>
-<span class="dox-channel-sub">AXONDEVUI</span>
-</span>
-</a>
-</div>
-</div>
-</div>
-<div class="modal" id="vip-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo saber si soy VIP">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<span class="mh-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none">
-<defs><linearGradient id="mhg-vip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
-<path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#mhg-vip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
-<path d="M5 20.2h14" stroke="url(#mhg-vip)" stroke-width="2.1" stroke-linecap="round"/>
-<circle cx="12" cy="10.5" r="1.15" fill="url(#mhg-vip)"/>
-</svg>
-</span>
-<h3>¿Cómo saber si soy VIP?</h3>
-<p>Descúbrelo en el video.</p>
-</div>
-<div class="video-stage">
-<div class="stage-orbit" aria-hidden="true"></div>
-<div class="phone">
-<div class="phone-screen">
-<video class="video-el" controls playsinline preload="metadata">
-<source src="m/43e46d4f2f2b.mp4" type="video/mp4" />
-Tu navegador no soporta el video.
-</video>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal" id="download-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card confirm-card" role="dialog" aria-modal="true" aria-label="Confirmar descarga">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<div class="confirm-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
-</div>
-<h3>Descargar para Android</h3>
-<p id="download-name">¿Deseas descargar la aplicación?</p>
-</div>
-<div class="confirm-actions">
-<button class="btn-ghost tilt3d" data-close>Cancelar</button>
-<button class="btn-primary tilt3d" id="download-confirm">Descargar APK</button>
-</div>
-<p class="confirm-note">Aplicación independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
-</div>
-</div>
-<div class="modal" id="adquirir-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Elegir método de compra">
-<button class="modal-close" data-close aria-label="Cerrar">✕</button>
-<div class="modal-head">
-<h3>¿Cómo deseas adquirir?</h3>
-<p id="adquirir-pkg-label">Elige una opción para continuar.</p>
-</div>
-<div class="adquirir-list">
-<button type="button" class="adquirir-option adquirir-auto" id="adquirir-go-auto">
-<span class="adq-ico" aria-hidden="true">
-<svg viewBox="0 0 24 24" fill="none" width="22" height="22">
-<path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-<span class="adq-meta">
-<span class="adq-title">Recarga automática</span>
-<span class="adq-desc">Paga en línea y tu usuario se activa solo</span>
-</span>
-<span class="adq-arrow" aria-hidden="true">›</span>
-</button>
-<div class="adquirir-support-block">
-<div class="adquirir-support-head">
-<span class="adq-ico" aria-hidden="true">💬</span>
-<span class="adq-meta">
-<span class="adq-title">Contactar a soporte</span>
-<span class="adq-desc">Te atendemos por Telegram o WhatsApp</span>
-</span>
-</div>
-<div class="contacts" id="adquirir-contacts"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal nequi-scope account-gate" id="account-modal" aria-hidden="true">
-<div class="modal-backdrop account-backdrop"></div>
-<div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Inicia sesión">
-<button class="modal-close nq-close" id="account-close" data-close aria-label="Cerrar" hidden>✕</button>
-<div class="nq-topbar">
-<img class="nq-brand" src="m/00f6a980fa11.svg" alt="Tsorbit" />
-<span class="nq-topbar-tag">Acceso</span>
-</div>
-<div id="account-auth">
-<div class="account-auth-head">
-<h3 id="account-auth-title">Inicia sesión</h3>
-</div>
-<form id="account-login-form" class="nq-recarga-form account-form" novalidate>
-<div class="nq-fld">
-<input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
-<label class="nq-fldl" for="account-login">Usuario o correo</label>
-</div>
-<div class="nq-fld">
-<input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
-</div>
-<p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Ingresar</button>
-<p class="account-switch">¿No tienes cuenta? <button type="button" id="account-to-register">Regístrate gratis</button></p>
-<p class="account-switch"><button type="button" id="account-to-forgot">¿Olvidaste tu usuario o PIN?</button></p>
-</form>
-<form id="account-forgot-form" class="nq-recarga-form account-form" novalidate hidden>
-<p class="account-forgot-info">Escribe tu correo y te enviaremos tu nombre de usuario y un código para crear un PIN nuevo.</p>
-<div class="nq-fld">
-<input id="account-forgot-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
-<label class="nq-fldl" for="account-forgot-email">Correo</label>
-</div>
-<p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Enviar código</button>
-<p class="account-switch"><button type="button" id="account-forgot-back">Volver al inicio de sesión</button></p>
-</form>
-<form id="account-reset-form" class="nq-recarga-form account-form" novalidate hidden>
-<p class="account-forgot-info">Revisa tu correo: te llegó un código de 6 dígitos.</p>
-<div class="nq-fld">
-<input id="account-reset-code" class="nq-fldi" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder=" " maxlength="6" />
-<label class="nq-fldl" for="account-reset-code">Código de 6 dígitos</label>
-</div>
-<div class="nq-fld">
-<input id="account-reset-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-reset-pin">Nuevo PIN de 4 dígitos</label>
-</div>
-<div class="nq-fld">
-<input id="account-reset-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-reset-pin-confirm">Confirmar nuevo PIN</label>
-</div>
-<p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Cambiar PIN</button>
-<p class="account-switch"><button type="button" id="account-reset-back">Volver al inicio de sesión</button></p>
-</form>
-<form id="account-register-form" class="nq-recarga-form account-form" novalidate hidden>
-<div class="nq-fld">
-<input id="account-username" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="32" />
-<label class="nq-fldl" for="account-username">Nombre de usuario</label>
-</div>
-<div class="nq-fld">
-<input id="account-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
-<label class="nq-fldl" for="account-email">Correo</label>
-</div>
-<div class="nq-fld">
-<input id="account-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-pin">PIN de 4 dígitos</label>
-</div>
-<div class="nq-fld">
-<input id="account-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="account-pin-confirm">Confirmar PIN</label>
-</div>
-<p class="nq-rhint account-hint" hidden></p>
-<button class="nq-rbtn" type="submit">Crear cuenta gratis</button>
-<p class="account-switch">¿Ya tienes cuenta? <button type="button" id="account-to-login">Inicia sesión</button></p>
-</form>
-</div>
-<div id="account-dashboard" hidden>
-<div class="account-profile">
-<div class="account-avatar" aria-hidden="true">👤</div>
-<div>
-<h3 id="account-display-name">Mi cuenta</h3>
-<p id="account-display-email"></p>
-</div>
-</div>
-<div class="account-history-head">
-<div>
-<h4>Mis usuarios comprados</h4>
-<p>Número, PIN y saldo disponibles después del pago.</p>
-</div>
-<button type="button" id="account-refresh" aria-label="Actualizar historial">↻</button>
-</div>
-<div class="account-history" id="account-history">
-<p class="account-empty">Todavía no tienes compras.</p>
-</div>
-<button class="nq-rbtn nq-rbtn-ghost account-logout" type="button" id="account-logout">Cerrar sesión</button>
-</div>
-<p class="nq-rlegal" id="account-legal">Debes iniciar sesión para usar la web.</p>
-</div>
-</div>
-<div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
-<div class="modal-backdrop" data-close></div>
-<div class="modal-card nq-recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
-<button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
-<div class="nq-topbar">
-<button type="button" class="nq-back" id="recarga-back" hidden aria-label="Volver">‹</button>
-<img class="nq-brand" id="recarga-brand" src="m/00f6a980fa11.svg" alt="Recarga" />
-<span class="nq-topbar-tag" id="recarga-top-tag">Recarga</span>
-</div>
-<div class="nq-step" id="recarga-step-bank">
-<h3 class="nq-step-title">¿Qué app deseas recargar?</h3>
-<p class="nq-step-sub">Elige Nequi, Bancolombia o Daviplata</p>
-<div class="nq-choice-list">
-<button type="button" class="nq-choice" data-bank="nequi">
-<img class="nq-choice-ico" src="m/29ddd9fb071a.png" alt="" aria-hidden="true" />
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Nequi</span>
-<span class="nq-choice-desc">Android e iPhone</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-<button type="button" class="nq-choice" data-bank="bancolombia">
-<img class="nq-choice-ico" src="m/a0a326b18550.png" alt="" aria-hidden="true" />
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Bancolombia</span>
-<span class="nq-choice-desc">Android e iPhone</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-<button type="button" class="nq-choice" data-bank="daviplata">
-<img class="nq-choice-ico" src="m/0e6841574621.jpeg" alt="" aria-hidden="true" />
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Daviplata</span>
-<span class="nq-choice-desc">Android e iPhone</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-</div>
-</div>
-<div class="nq-step" id="recarga-step-platform" hidden>
-<h3 class="nq-step-title">Elige tu plataforma</h3>
-<p class="nq-step-sub" id="recarga-platform-sub">Android o iPhone</p>
-<div class="nq-choice-list">
-<button type="button" class="nq-choice" data-platform="android">
-<span class="nq-choice-platform" aria-hidden="true">
-<img src="m/229af6e81d73.svg" alt="" />
-</span>
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Android</span>
-<span class="nq-choice-desc">APK · Instalar en tu celular</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-<button type="button" class="nq-choice" data-platform="iphone">
-<span class="nq-choice-platform" aria-hidden="true">
-<img src="m/d068cf533e20.svg" alt="" />
-</span>
-<span class="nq-choice-meta">
-<span class="nq-choice-title">iPhone</span>
-<span class="nq-choice-desc">Instalar en iOS</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-</div>
-</div>
-<div class="nq-step" id="recarga-step-form" hidden>
-<div class="nq-saldo-card">
-<div class="nq-saldo-banner">
-<span class="nq-saldo-label">Disponible</span>
-<button type="button" class="nq-eye" id="recarga-eye" aria-label="Mostrar u ocultar saldo">
-<img class="nq-eye-show" src="m/c11ff13e5ac5.svg" alt="" aria-hidden="true" />
-<img class="nq-eye-hide" src="m/f72f7e8086b8.svg" alt="" aria-hidden="true" hidden />
-</button>
-</div>
-<div class="nq-saldo-body">
-<div class="nq-saldo-amount" id="recarga-saldo">$ 0</div>
-<div class="nq-saldo-foot">
-<span class="nq-saldo-pill" id="recarga-precio">—</span>
-<span class="nq-saldo-note">Se acredita al confirmar el pago</span>
-</div>
-</div>
-</div>
-<div class="nq-chips" id="recarga-chips" role="group" aria-label="Elige el saldo">
-<button type="button" class="nq-chip" data-pkg="p20">2.5M</button>
-<button type="button" class="nq-chip" data-pkg="p25">4.0M</button>
-<button type="button" class="nq-chip" data-pkg="p30">6.0M</button>
-<button type="button" class="nq-chip" data-pkg="p40">8.0M</button>
-<button type="button" class="nq-chip" data-pkg="p50">10M</button>
-</div>
-<form id="recarga-form" class="nq-recarga-form" novalidate>
-<div class="nq-fld" id="recarga-name-wrap">
-<input id="recarga-name" class="nq-fldi" type="text" autocomplete="name"
-placeholder=" " maxlength="40" />
-<label class="nq-fldl" for="recarga-name">Tu nombre</label>
-</div>
-<div class="nq-fld" id="recarga-phone-wrap">
-<input id="recarga-phone" class="nq-fldi" type="tel" inputmode="numeric" autocomplete="off"
-placeholder=" " maxlength="12" />
-<label class="nq-fldl" for="recarga-phone">Cel</label>
-</div>
-<div class="nq-fld" id="recarga-user-wrap" hidden>
-<input id="recarga-username" class="nq-fldi" type="text" autocomplete="off"
-placeholder=" " maxlength="32" />
-<label class="nq-fldl" for="recarga-username">Nombre de usuario</label>
-</div>
-<div class="nq-fld">
-<input id="recarga-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="off"
-placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="recarga-pin">Crea tu clave (4 dígitos)</label>
-</div>
-<div class="nq-fld">
-<input id="recarga-pin2" class="nq-fldi" type="password" inputmode="numeric" autocomplete="off"
-placeholder=" " maxlength="4" />
-<label class="nq-fldl" for="recarga-pin2">Confirma tu clave</label>
-</div>
-<p class="nq-rhint" id="recarga-hint" hidden></p>
-<button class="nq-rbtn" id="recarga-submit" type="submit">Pagar ahora</button>
-<p class="nq-rsecure">
-<img src="m/bdd63a7873be.svg" alt="" aria-hidden="true" />
-Pago protegido · Cifrado seguro
-</p>
-</form>
-</div>
-<div class="nq-step" id="recarga-step-payment" hidden>
-<h3 class="nq-step-title">Elige cómo pagar</h3>
-<p class="nq-step-sub">Tu usuario se activa al confirmar el pago</p>
-<div class="nq-choice-list">
-<button type="button" class="nq-choice" data-payment="wompi">
-<span class="nq-payment-ico">W</span>
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Wompi</span>
-<span class="nq-choice-desc">Pago automático y confirmación inmediata</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-<button type="button" class="nq-choice" data-payment="breb">
-<span class="nq-payment-ico is-breb">B</span>
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Bre-B</span>
-<span class="nq-choice-desc">Llave: @AXONDEVUI · aprobación automática</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-<button type="button" class="nq-choice" data-payment="nequi">
-<span class="nq-payment-ico is-nequi">N</span>
-<span class="nq-choice-meta">
-<span class="nq-choice-title">Nequi</span>
-<span class="nq-choice-desc">Número: 3180135842 · aprobación automática</span>
-</span>
-<span class="nq-choice-arrow" aria-hidden="true">›</span>
-</button>
-</div>
-</div>
-<div class="nq-step" id="recarga-step-breb" hidden>
-<h3 class="nq-step-title">Paga por Bre-B</h3>
-<div class="nq-manual-card">
-<span>Llave Bre-B</span>
-<strong>@AXONDEVUI</strong>
-<button type="button" id="recarga-copy-breb">Copiar llave</button>
-</div>
-<p class="nq-step-sub">Transfiere exactamente <b id="recarga-manual-amount">—</b>. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
-<form id="recarga-breb-form" class="nq-recarga-form nq-manual-form" novalidate>
-<div class="nq-fld">
-<input id="recarga-payer-name" class="nq-fldi" type="text" autocomplete="name"
-placeholder=" " maxlength="80" />
-<label class="nq-fldl" for="recarga-payer-name">Nombres y apellidos del pagador</label>
-</div>
-<p class="nq-rhint" id="recarga-breb-hint" hidden></p>
-<button class="nq-rbtn" id="recarga-breb-ready" type="submit">Listo, ya pagué</button>
-</form>
-</div>
-<div class="nq-step" id="recarga-step-nequi-pay" hidden>
-<h3 class="nq-step-title">Paga por Nequi</h3>
-<div class="nq-manual-card">
-<span>Número Nequi</span>
-<strong>3180135842</strong>
-<button type="button" id="recarga-copy-nequi">Copiar número</button>
-</div>
-<p class="nq-step-sub">Envía exactamente <b id="recarga-nequi-amount">—</b> a ese número. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
-<form id="recarga-nequi-form" class="nq-recarga-form nq-manual-form" novalidate>
-<div class="nq-fld">
-<input id="recarga-nequi-payer-name" class="nq-fldi" type="text" autocomplete="name"
-placeholder=" " maxlength="80" />
-<label class="nq-fldl" for="recarga-nequi-payer-name">Nombres y apellidos del pagador</label>
-</div>
-<p class="nq-rhint" id="recarga-nequi-hint" hidden></p>
-<button class="nq-rbtn" id="recarga-nequi-ready" type="submit">Listo, ya pagué</button>
-</form>
-</div>
-<div class="nq-rstate" id="recarga-processing" hidden>
-<div class="nq-rspinner" aria-hidden="true"></div>
-<h4 id="recarga-processing-title">Verificando tu pago…</h4>
-<p class="nq-rsub" id="recarga-processing-msg">No cierres esta ventana.</p>
-</div>
-<div class="nq-rstate" id="recarga-done" hidden>
-<img class="nq-rcheck" src="m/64002dc1f914.svg" alt="" aria-hidden="true" />
-<h4 id="recarga-done-title">¡Usuario activado!</h4>
-<p id="recarga-done-msg" class="nq-rsub">Tu saldo ya está disponible.</p>
-<div class="nq-done-actions" id="recarga-done-actions"></div>
-</div>
-<div class="nq-rstate" id="recarga-failed" hidden>
-<img class="nq-rfailico" src="m/39c1d6a8a1a1.svg" alt="" aria-hidden="true" />
-<h4>Pago no completado</h4>
-<p id="recarga-failed-msg" class="nq-rsub">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
-<button class="nq-rbtn nq-rbtn-ghost" type="button" id="recarga-retry">Reintentar</button>
-</div>
-<p class="nq-rlegal">Servicio independiente de Tsorbit. No afiliado a las entidades financieras mostradas.</p>
-</div>
-</div>
-<footer class="site-footer" id="organizacion">
-<div class="foot-top">
-<div class="foot-brand">
-<img src="m/467df82bc779.svg" alt="Nequi Tsorbit" class="foot-logo" />
-<div class="foot-brand-text">
-<span class="foot-brand-name">NEQUI TSORBIT</span>
-<span class="foot-brand-sub">Organización</span>
-</div>
-</div>
-<div class="foot-by">Por <b>『тѕσявιт』</b> · AXONDEVUI</div>
-</div>
-<div class="foot-grid">
-<div class="foot-col">
-<h4>Aplicaciones</h4>
-<a href="#apps" data-nav>Nequi</a>
-<a href="#apps" data-nav>Bancolombia</a>
-<a href="#apps" data-nav>Daviplata</a>
-<a href="#apps" data-nav>G5</a>
-</div>
-<div class="foot-col">
-<h4>Servicios</h4>
-<a href="#soporte" data-nav>Recarga automática</a>
-<a href="#precios" data-nav>Lista de precios</a>
-<a data-view="view-consultar" role="button" tabindex="0">Consultar nombres</a>
-<a data-open="dox-modal" role="button" tabindex="0">DOX BOT</a>
-</div>
-<div class="foot-col">
-<h4>Ayuda</h4>
-<a href="#" data-open="support-modal">Recargas y Soporte</a>
-<a href="#tutoriales" data-nav>Tutoriales</a>
-<a href="#" data-open="recarga-tuto-modal">Cómo recargar automático</a>
-<a href="#" data-open="keys-modal">¿Cómo usar llaves?</a>
-<a href="#" data-open="vip-modal">¿Cómo saber si soy VIP?</a>
-</div>
-<div class="foot-col">
-<h4>Comunidades</h4>
-<a href="https://t.me/tsorbit" target="_blank" rel="noopener noreferrer">Telegram oficial</a>
-<a href="https://chat.whatsapp.com/HjmAbKuem3BL52676YiWWX?s=cl&amp;p=a&amp;ilr=1" target="_blank" rel="noopener noreferrer">WhatsApp oficial</a>
-<a href="#comunidades" data-nav>Novedades</a>
-</div>
-<div class="foot-col">
-<h4>Contáctanos</h4>
-<a href="#" id="foot-telegram" target="_blank" rel="noopener noreferrer">Telegram: AXONDEVUI</a>
-<a href="#" id="foot-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
-<a href="#organizacion" data-nav>La Organización</a>
-</div>
-</div>
-<div class="foot-bottom">
-<span>© <span id="year"></span> Nequi Tsorbit · Todos los derechos reservados</span>
-</div>
-</footer>
+  <div class="bg-embers" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+  <canvas id="orbit-canvas" aria-hidden="true"></canvas>
+
+  <!-- Gradientes compartidos (fuego→agua) para iconos SVG -->
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none">
+    <defs>
+      <linearGradient id="actGrad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
+      </linearGradient>
+      <linearGradient id="actGradVip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="brand" data-view="view-home" role="button" tabindex="0">
+      <img src="m/467df82bc779.svg" alt="Nequi Tsorbit" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-name">NEQUI</span>
+        <span class="brand-sub">TSORBIT</span>
+      </div>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#inicio" data-nav>Inicio</a>
+      <a href="#apps" data-nav>Apps</a>
+      <a href="#precios" data-nav>Precios</a>
+      <a href="#soporte" data-nav>Soporte</a>
+      <a href="#tutoriales" data-nav>Tutoriales</a>
+      <a href="#comunidades" data-nav>Comunidades</a>
+      <a href="#organizacion" data-nav>Contacto</a>
+      <a href="#" id="account-nav" data-account-open>Mi cuenta</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ================= VISTA HOME ================= -->
+    <div class="view active" id="view-home">
+      <!-- HERO -->
+      <section id="inicio" class="hero">
+        <div class="hero-emblem">
+          <img src="m/467df82bc779.svg" alt="Emblema Nequi Tsorbit" class="emblem-img" />
+          <div class="emblem-ring r1"></div>
+          <div class="emblem-ring r2"></div>
+          <div class="emblem-ring r3"></div>
+        </div>
+        <h1 class="hero-title"><span class="grad">NEQUI TSORBIT</span></h1>
+        <p class="hero-desc">Bienvenido. Elige una app para comenzar.</p>
+        <a href="#apps" class="btn-primary tilt3d" data-nav>Comenzar</a>
+      </section>
+
+      <!-- APPS -->
+      <section id="apps" class="section">
+        <div class="section-head">
+          <span class="kicker">APLICACIONES</span>
+          <h2>Elige tu app</h2>
+          <p>Selecciona una aplicación para entrar a su sección.</p>
+        </div>
+
+        <div class="app-grid">
+          <button class="app-card tilt3d" data-view="view-nequi">
+            <div class="app-glow"></div>
+            <div class="app-badge"><img src="m/29ddd9fb071a.png" alt="Nequi" /></div>
+            <h3 class="app-name">Nequi</h3>
+            <span class="app-cta">Entrar →</span>
+          </button>
+
+          <button class="app-card tilt3d" data-view="view-bancolombia">
+            <div class="app-glow"></div>
+            <div class="app-badge"><img src="m/a0a326b18550.png" alt="Bancolombia" /></div>
+            <h3 class="app-name">Bancolombia</h3>
+            <span class="app-cta">Entrar →</span>
+          </button>
+
+          <button class="app-card tilt3d" data-view="view-daviplata">
+            <div class="app-glow"></div>
+            <div class="app-badge"><img src="m/0e6841574621.jpeg" alt="Daviplata" /></div>
+            <h3 class="app-name">Daviplata</h3>
+            <span class="app-cta">Entrar →</span>
+          </button>
+
+          <button class="app-card tilt3d" data-view="view-g5">
+            <div class="app-glow"></div>
+            <div class="app-badge"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
+            <h3 class="app-name">G5</h3>
+            <span class="app-cta">Entrar →</span>
+          </button>
+
+          <button class="app-card app-card-dox tilt3d" type="button" data-open="dox-modal" aria-haspopup="dialog">
+            <div class="app-glow dox-glow"></div>
+            <div class="app-badge dox-badge"><img src="m/19bc729deca0.svg" alt="DOX BOT" /></div>
+            <h3 class="app-name dox-name">DOX BOT</h3>
+            <span class="app-cta dox-cta">Abrir →</span>
+          </button>
+
+          <button class="app-card tilt3d" type="button" id="modificaciones-apps" data-telegram-direct>
+            <div class="app-glow"></div>
+            <div class="app-badge"><img src="m/3192a23c5a48.svg" alt="Modificaciones" /></div>
+            <h3 class="app-name">Modificaciones de Apps Codes y APIs</h3>
+            <span class="app-cta">Telegram →</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- LISTA DE PRECIOS -->
+      <section id="precios" class="section">
+        <div class="section-head">
+          <span class="kicker">TARIFAS</span>
+          <h2>Lista de precios</h2>
+          <p>Precios por saldo. Recarga automática o con soporte.</p>
+        </div>
+
+        <div class="price-grid">
+          <div class="price-card tilt3d">
+            <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
+            <span class="price-amount">2.5<b>M</b></span>
+            <span class="price-cost"><b>20</b> COP</span>
+            <a class="price-cta" data-recarga="p20" role="button" tabindex="0">Adquirir</a>
+          </div>
+
+          <div class="price-card tilt3d">
+            <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
+            <span class="price-amount">4.0<b>M</b></span>
+            <span class="price-cost"><b>25</b> COP</span>
+            <a class="price-cta" data-recarga="p25" role="button" tabindex="0">Adquirir</a>
+          </div>
+
+          <div class="price-card tilt3d">
+            <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
+            <span class="price-amount">6.0<b>M</b></span>
+            <span class="price-cost"><b>30</b> COP</span>
+            <a class="price-cta" data-recarga="p30" role="button" tabindex="0">Adquirir</a>
+          </div>
+
+          <div class="price-card tilt3d">
+            <div class="price-ico"><img src="m/d754bf36dfd4.svg" alt="" aria-hidden="true" /></div>
+            <span class="price-amount">8.0<b>M</b></span>
+            <span class="price-cost"><b>40</b> COP</span>
+            <a class="price-cta" data-recarga="p40" role="button" tabindex="0">Adquirir</a>
+          </div>
+
+          <div class="price-card price-best tilt3d">
+            <span class="price-badge">Más saldo</span>
+            <div class="price-ico"><img src="m/588ea15f1c14.svg" alt="" aria-hidden="true" /></div>
+            <span class="price-amount">10<b>M</b></span>
+            <span class="price-cost"><b>50</b> COP</span>
+            <a class="price-cta" data-recarga="p50" role="button" tabindex="0">Adquirir</a>
+          </div>
+        </div>
+        <p class="price-note">Elige recarga automática o contacta a soporte para adquirir.</p>
+      </section>
+
+      <!-- RECARGAS Y SOPORTE -->
+      <section id="soporte" class="section">
+        <div class="section-head">
+          <span class="kicker">ATENCIÓN</span>
+          <h2>Recargas y Soporte</h2>
+          <p>Recarga automática, soporte y consulta de nombres.</p>
+        </div>
+
+        <ul class="row-list">
+          <li class="row3d tilt3d" data-recarga-open role="button" tabindex="0" aria-haspopup="dialog">
+            <span class="row-ico ic ic-recarga" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5V9h4.5" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 19.5V15h-4.5" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#icg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">Recarga automática</span>
+              <span class="row-sub">Paga en línea · Tu usuario se activa solo</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+
+          <li class="row3d tilt3d" data-open="support-modal" role="button" tabindex="0" aria-haspopup="dialog">
+            <span class="row-ico ic ic-support" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-support" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#icg-support)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#icg-support)"/>
+                <path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#icg-support)"/>
+                <path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#icg-support)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">Recargas y Soporte</span>
+              <span class="row-sub">Telegram · WhatsApp · Respuesta rápida</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+
+          <li class="row3d tilt3d" data-view="view-consultar" role="button" tabindex="0">
+            <span class="row-ico ic ic-consultar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-consultar" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <circle cx="10.5" cy="10.5" r="5.8" stroke="url(#icg-consultar)" stroke-width="2.1"/>
+                <path d="M15.2 15.2 20 20" stroke="url(#icg-consultar)" stroke-width="2.1" stroke-linecap="round"/>
+                <path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#icg-consultar)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">Consultar Nombres De Nequi</span>
+              <span class="row-sub">Busca el nombre · 1 consulta de prueba</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- TUTORIALES -->
+      <section id="tutoriales" class="section">
+        <div class="section-head">
+          <span class="kicker">GUÍAS</span>
+          <h2>Tutoriales</h2>
+          <p>Aprende paso a paso con videos en formato celular.</p>
+        </div>
+
+        <ul class="row-list">
+          <li class="row3d tilt3d" data-open="recarga-tuto-modal" role="button" tabindex="0" aria-haspopup="dialog">
+            <span class="row-ico ic ic-recarga" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-tuto-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5V9h4.5" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 19.5V15h-4.5" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#icg-tuto-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">Cómo hacer recarga automática</span>
+              <span class="row-sub">Video tutorial · Paso a paso</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+
+          <li class="row3d tilt3d" data-open="keys-modal" role="button" tabindex="0" aria-haspopup="dialog">
+            <span class="row-ico ic ic-keys" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-tuto-keys" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <circle cx="8" cy="16" r="4.2" stroke="url(#icg-tuto-keys)" stroke-width="2.1"/>
+                <path d="M11 13 20 4" stroke="url(#icg-tuto-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#icg-tuto-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="8" cy="16" r="1.2" fill="url(#icg-tuto-keys)"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">¿Cómo usar llaves?</span>
+              <span class="row-sub">Video tutorial · Paso a paso</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+
+          <li class="row3d tilt3d" data-open="vip-modal" role="button" tabindex="0" aria-haspopup="dialog">
+            <span class="row-ico ic ic-vip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <defs><linearGradient id="icg-tuto-vip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+                <path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#icg-tuto-vip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+                <path d="M5 20.2h14" stroke="url(#icg-tuto-vip)" stroke-width="2.1" stroke-linecap="round"/>
+                <circle cx="12" cy="10.5" r="1.15" fill="url(#icg-tuto-vip)"/>
+              </svg>
+            </span>
+            <span class="row-body">
+              <span class="row-title">¿Cómo saber si soy vip?</span>
+              <span class="row-sub">Video · Verifica tu estatus</span>
+            </span>
+            <span class="row-chevron">→</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- COMUNIDADES -->
+      <section id="comunidades" class="section">
+        <div class="section-head">
+          <span class="kicker">COMUNIDAD</span>
+          <h2>Únete a la comunidad</h2>
+          <p>Novedades, soporte y ofertas en nuestros canales oficiales.</p>
+        </div>
+
+        <div class="comm-grid">
+          <a class="comm-card tg tilt3d" href="https://t.me/tsorbit" target="_blank" rel="noopener noreferrer">
+            <span class="comm-ico">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+            </span>
+            <span class="comm-meta">
+              <span class="comm-name">Telegram</span>
+              <span class="comm-sub">Comunidad oficial</span>
+            </span>
+            <span class="comm-cta">Unirme →</span>
+          </a>
+
+          <a class="comm-card wa tilt3d" href="https://chat.whatsapp.com/HjmAbKuem3BL52676YiWWX?s=cl&amp;p=a&amp;ilr=1" target="_blank" rel="noopener noreferrer">
+            <span class="comm-ico">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
+            </span>
+            <span class="comm-meta">
+              <span class="comm-name">WhatsApp</span>
+              <span class="comm-sub">Comunidad oficial</span>
+            </span>
+            <span class="comm-cta">Unirme →</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VISTA NEQUI ================= -->
+    <div class="view" id="view-nequi">
+      <section class="section app-view">
+        <button class="back-btn tilt3d" data-view="view-home">← Volver</button>
+        <div class="app-hero">
+          <div class="app-hero-badge nequi"><img src="m/29ddd9fb071a.png" alt="Nequi" /></div>
+          <h1 class="hero-title"><span class="grad">Nequi</span></h1>
+          <p class="app-tag">Descarga la app más reciente</p>
+          <span class="app-version">Versión más reciente · Nequi Col</span>
+        </div>
+
+        <div class="platform-row">
+          <button class="plat-btn android tilt3d" data-download="/apk/NequiCol.apk?v=20260724b" data-filename="Nequi Col.apk">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">Android</span>
+              <span class="plat-sub">Descargar APK · Instalar</span>
+            </span>
+          </button>
+
+          <a class="plat-btn iphone tilt3d" href="https://iphoneiostsorbit.pages.dev/" target="_blank" rel="noopener noreferrer">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">iPhone</span>
+              <span class="plat-sub">Instalar en iOS →</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="act-grid">
+          <button class="act-tile tilt3d" data-view="view-consultar">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+                <path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Consultar Nombres</span>
+            <span class="act-sub">Verifica un titular</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="support-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+                <path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+                <path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recargas y Soporte</span>
+            <span class="act-sub">Contacto directo</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recarga automática</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="keys-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo usar llaves?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="vip-modal">
+            <span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+                <path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+                <circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo saber si soy VIP?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VISTA BANCOLOMBIA ================= -->
+    <div class="view" id="view-bancolombia">
+      <section class="section app-view">
+        <button class="back-btn tilt3d" data-view="view-home">← Volver</button>
+        <div class="app-hero">
+          <div class="app-hero-badge bancolombia"><img src="m/a0a326b18550.png" alt="Bancolombia" /></div>
+          <h1 class="hero-title"><span class="grad">Bancolombia</span></h1>
+          <p class="app-tag">Descarga la app más reciente</p>
+          <span class="app-version">Versión más reciente · Bancolombia Ts Orbit</span>
+        </div>
+
+        <div class="platform-row">
+          <button class="plat-btn android tilt3d" data-download="/apk/BancolombiaTsorbit.apk" data-filename="Mi Bancolombia.apk">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">Android</span>
+              <span class="plat-sub">Descargar APK · Instalar</span>
+            </span>
+          </button>
+
+          <a class="plat-btn iphone tilt3d" href="https://tsorbitiosbancol.pages.dev/" target="_blank" rel="noopener noreferrer">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">iPhone</span>
+              <span class="plat-sub">Instalar en iOS →</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="act-grid">
+          <button class="act-tile tilt3d" data-view="view-consultar">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+                <path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Consultar Nombres</span>
+            <span class="act-sub">Verifica un titular</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="support-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+                <path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+                <path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recargas y Soporte</span>
+            <span class="act-sub">Contacto directo</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recarga automática</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="keys-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo usar llaves?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="vip-modal">
+            <span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+                <path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+                <circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo saber si soy VIP?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VISTA DAVIPLATA ================= -->
+    <div class="view" id="view-daviplata">
+      <section class="section app-view">
+        <button class="back-btn tilt3d" data-view="view-home">← Volver</button>
+        <div class="app-hero">
+          <div class="app-hero-badge daviplata"><img src="m/0e6841574621.jpeg" alt="Daviplata" /></div>
+          <h1 class="hero-title"><span class="grad">Daviplata</span></h1>
+          <p class="app-tag">Descarga la app más reciente</p>
+          <span class="app-version">Versión más reciente · Daviplata Tsorbit</span>
+        </div>
+
+        <div class="platform-row">
+          <button class="plat-btn android tilt3d" data-download="/apk/DaviplataTsorbit.apk" data-filename="Daviplata Tsorbit.apk">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">Android</span>
+              <span class="plat-sub">Descargar APK · Instalar</span>
+            </span>
+          </button>
+
+          <a class="plat-btn iphone tilt3d" href="https://daviplataiphonetsorbit.pages.dev/iphone/" target="_blank" rel="noopener noreferrer">
+            <span class="plat-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="#f5f5f7"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </span>
+            <span class="plat-meta">
+              <span class="plat-name">iPhone</span>
+              <span class="plat-sub">Instalar en iOS →</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="act-grid">
+          <button class="act-tile tilt3d" data-view="view-consultar">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="10.5" cy="10.5" r="5.8" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M15.2 15.2 20 20" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+                <path d="M8.2 10.5h4.6M10.5 8.2v4.6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Consultar Nombres</span>
+            <span class="act-sub">Verifica un titular</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="support-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 18v-6a8 8 0 0 1 16 0v6" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15h2.2c.6 0 1 .4 1 1v3.5c0 .6-.4 1-1 1H5.2A1.2 1.2 0 0 1 4 20.3z" fill="url(#actGrad)"/>
+                <path d="M20 15h-2.2c-.6 0-1 .4-1 1v3.5c0 .6.4 1 1 1h1c.7 0 1.2-.5 1.2-1.2z" fill="url(#actGrad)"/>
+                <path d="M20 19.5c0 1.9-1.6 2.8-3.6 3" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recargas y Soporte</span>
+            <span class="act-sub">Contacto directo</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="recarga-tuto-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="act-name">Recarga automática</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="keys-modal">
+            <span class="act-ico act-ico-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="8" cy="16" r="4.2" stroke="url(#actGrad)" stroke-width="2.1"/>
+                <path d="M11 13 20 4" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="8" cy="16" r="1.2" fill="url(#actGrad)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo usar llaves?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+          <button class="act-tile tilt3d" data-open="vip-modal">
+            <span class="act-ico act-ico-ic act-ico-vip" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+                <path d="M5 20.2h14" stroke="url(#actGradVip)" stroke-width="2.1" stroke-linecap="round"/>
+                <circle cx="12" cy="10.5" r="1.15" fill="url(#actGradVip)"/>
+              </svg>
+            </span>
+            <span class="act-name">¿Cómo saber si soy VIP?</span>
+            <span class="act-sub">Video tutorial</span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VISTA G5 (CONTACTO DIRECTO) ================= -->
+    <div class="view" id="view-g5">
+      <section class="section app-view">
+        <button class="back-btn tilt3d" data-view="view-home">← Volver</button>
+        <div class="app-hero">
+          <div class="app-hero-badge g5"><img src="m/e156d490e784.jpeg" alt="G5" /></div>
+          <h1 class="hero-title"><span class="grad">G5</span></h1>
+          <p class="app-tag">Acceso directo por contacto</p>
+          <span class="app-version">WhatsApp o Telegram</span>
+        </div>
+
+        <div class="g5-contact-panel tilt3d">
+          <div class="g5-contact-head">
+            <span class="g5-contact-label">Contacto oficial</span>
+            <h2 class="g5-contact-title">AXONDEVUI</h2>
+            <p class="g5-contact-sub">Elige un canal para adquirir G5.</p>
+          </div>
+          <div class="g5-channel-list">
+            <a class="g5-channel g5-wa" id="g5-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+              <span class="g5-channel-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
+              </span>
+              <span class="g5-channel-meta">
+                <span class="g5-channel-name">WhatsApp</span>
+                <span class="g5-channel-sub">Contactar ahora</span>
+              </span>
+              <span class="g5-channel-chevron">→</span>
+            </a>
+            <a class="g5-channel g5-tg" id="g5-telegram" href="#" target="_blank" rel="noopener noreferrer">
+              <span class="g5-channel-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+              </span>
+              <span class="g5-channel-meta">
+                <span class="g5-channel-name">Telegram</span>
+                <span class="g5-channel-sub">AXONDEVUI</span>
+              </span>
+              <span class="g5-channel-chevron">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ================= VISTA CONSULTAR NOMBRES (ESTILO NEQUI) ================= -->
+    <div class="view" id="view-consultar">
+      <section class="section app-view nequi-scope">
+        <button class="back-btn tilt3d" data-view="view-home">← Volver</button>
+
+        <div class="nq-card">
+          <div class="nq-card-glow" aria-hidden="true"></div>
+
+          <div class="nq-head">
+            <img src="m/194db6fc110e.svg" alt="" class="nq-head-ico" aria-hidden="true" />
+            <h1 class="nq-title">Consultar Nombres</h1>
+            <p class="nq-sub">Verifica el titular de un número Nequi</p>
+            <span class="nq-pill">Prueba gratis · 1 consulta</span>
+          </div>
+
+          <!-- Formulario -->
+          <form class="nq-form" id="consultar-form" autocomplete="off">
+            <label class="nq-field">
+              <img src="m/80efd6097f7d.svg" alt="" class="nq-field-ico" aria-hidden="true" />
+              <input
+                class="nq-input"
+                id="consultar-input"
+                type="tel"
+                inputmode="numeric"
+                maxlength="13"
+                placeholder="310 000 0000"
+                aria-label="Número celular"
+                required
+              />
+            </label>
+            <button class="nq-btn" id="consultar-btn" type="submit">
+              <span class="nq-btn-txt">Consultar</span>
+            </button>
+            <p class="nq-hint" id="consultar-hint">Solo puedes hacer <b>1 consulta de prueba</b>.</p>
+          </form>
+
+          <!-- Cargando -->
+          <div class="nq-state nq-loading" id="consultar-loading" hidden>
+            <img src="m/d11ebb864dc3.svg" alt="Cargando" class="nq-loading-img" />
+            <p class="nq-loading-txt">Consultando…</p>
+          </div>
+
+          <!-- Resultado OK -->
+          <div class="nq-state nq-result-ok" id="consultar-ok" hidden>
+            <img src="m/9a305cfadb32.svg" alt="" class="nq-feedback" aria-hidden="true" />
+            <div class="nq-result-card">
+              <div class="nq-result-avatar"><img src="m/c589cc80c925.svg" alt="" aria-hidden="true" /></div>
+              <span class="nq-result-label">Titular</span>
+              <h2 class="nq-result-name" id="res-nombre">—</h2>
+              <ul class="nq-result-rows">
+                <li><span>Documento</span><b id="res-doc">—</b></li>
+                <li><span>Número</span><b id="res-num">—</b></li>
+                <li id="res-tiempo-row"><span>Tiempo</span><b id="res-tiempo">—</b></li>
+              </ul>
+            </div>
+            <p class="nq-used-inline" id="nq-used-inline" hidden>Ya usaste tu consulta de prueba. Esta es la que realizaste.</p>
+            <p class="nq-hist-note" id="res-hist-note" hidden>Tu consulta de prueba queda guardada aquí.</p>
+            <a class="nq-group-btn" id="nq-group-btn" target="_blank" rel="noopener noreferrer" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+              <span>Unirse Al Grupo</span>
+            </a>
+          </div>
+
+          <!-- Resultado ERROR -->
+          <div class="nq-state nq-result-fail" id="consultar-fail" hidden>
+            <img src="m/39c1d6a8a1a1.svg" alt="" class="nq-feedback" aria-hidden="true" />
+            <h2 class="nq-fail-title" id="fail-title">No se encontró</h2>
+            <p class="nq-fail-msg" id="fail-msg">Intenta con otro número.</p>
+          </div>
+
+          <!-- Prueba ya usada -->
+          <div class="nq-state nq-used" id="consultar-used" hidden>
+            <img src="m/3249132e9c7e.svg" alt="" class="nq-used-ico" aria-hidden="true" />
+            <h2 class="nq-used-title">Ya usaste tu consulta de prueba</h2>
+            <p class="nq-used-msg">Para consultas ilimitadas, contáctanos y adquiere un usuario.</p>
+            <button class="nq-btn nq-btn-ghost" type="button" data-open="support-modal">Contactar soporte</button>
+          </div>
+
+          <p class="nq-legal">Servicio independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- MODAL DE CONTACTOS -->
+  <div class="modal" id="support-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Recargas y Soporte">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <h3>Recargas y Soporte</h3>
+        <p>Recarga automática o contacta por un canal.</p>
+      </div>
+
+      <div class="adquirir-list">
+        <button type="button" class="adquirir-option adquirir-auto" id="support-go-auto">
+          <span class="adq-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+              <defs><linearGradient id="sup-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+              <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 4.5V9h4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 19.5V15h-4.5" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#sup-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="adq-meta">
+            <span class="adq-title">Recarga automática</span>
+            <span class="adq-desc">Paga en línea · Tu usuario se activa solo</span>
+          </span>
+          <span class="adq-arrow" aria-hidden="true">›</span>
+        </button>
+
+        <div class="adquirir-support-block">
+          <div class="adquirir-support-head">
+            <span class="adq-ico" aria-hidden="true">💬</span>
+            <span class="adq-meta">
+              <span class="adq-title">Contactar a soporte</span>
+              <span class="adq-desc">Telegram o WhatsApp</span>
+            </span>
+          </div>
+          <div class="contacts" id="contacts"><!-- inyectado por JS --></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL LLAVES -->
+  <div class="modal" id="keys-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo usar llaves">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <span class="mh-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <defs><linearGradient id="mhg-keys" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".55" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+            <circle cx="8" cy="16" r="4.2" stroke="url(#mhg-keys)" stroke-width="2.1"/>
+            <path d="M11 13 20 4" stroke="url(#mhg-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M17 7l2.5 2.5M15 9l2 2" stroke="url(#mhg-keys)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8" cy="16" r="1.2" fill="url(#mhg-keys)"/>
+          </svg>
+        </span>
+        <h3>¿Cómo usar llaves?</h3>
+        <p>Mira el tutorial paso a paso.</p>
+      </div>
+      <div class="video-stage">
+        <div class="stage-orbit" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="phone-screen">
+            <video class="video-el" controls playsinline preload="metadata">
+              <source src="m/59980964e647.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL RECARGA AUTOMÁTICA (TUTORIAL) -->
+  <div class="modal" id="recarga-tuto-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo hacer recarga automática">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <span class="mh-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <defs><linearGradient id="mhg-recarga" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ff8a4c"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+            <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 4.5V9h4.5" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 19.5V15h-4.5" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#mhg-recarga)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Cómo hacer recarga automática</h3>
+        <p>Mira el tutorial paso a paso.</p>
+      </div>
+      <div class="video-stage">
+        <div class="stage-orbit" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="phone-screen">
+            <video class="video-el" controls playsinline preload="metadata">
+              <source src="m/cb8be1c69d51.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DOX BOT -->
+  <div class="modal dox-modal" id="dox-modal" aria-hidden="true">
+    <div class="modal-backdrop dox-backdrop" data-close></div>
+    <div class="modal-card dox-card" role="dialog" aria-modal="true" aria-label="DOX BOT">
+      <button class="modal-close dox-close" data-close aria-label="Cerrar">✕</button>
+      <div class="dox-modal-head">
+        <div class="dox-modal-badge" aria-hidden="true">
+          <img src="m/19bc729deca0.svg" alt="" />
+        </div>
+        <p class="dox-whisper">no mires atrás…</p>
+        <h3 class="dox-modal-title">DOX BOT</h3>
+        <p class="dox-modal-sub">Elige cómo contactar. El rastro no se borra.</p>
+      </div>
+      <div class="dox-channels">
+        <a class="dox-channel dox-wa" id="dox-whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          <span class="dox-channel-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#25d366"/><path fill="#fff" d="M12.04 5.5c-3.58 0-6.5 2.9-6.5 6.48 0 1.14.3 2.26.87 3.24L5.5 18.5l3.38-.88c.94.51 2 .78 3.08.78h.01c3.58 0 6.5-2.9 6.5-6.48 0-1.73-.68-3.36-1.9-4.58a6.46 6.46 0 0 0-4.53-1.84zm3.8 9.16c-.16.45-.94.86-1.3.89-.33.04-.75.05-1.21-.08-.28-.09-.64-.2-1.1-.4-1.94-.84-3.2-2.79-3.3-2.92-.1-.13-.79-1.05-.79-2s.5-1.42.68-1.61c.18-.19.39-.24.52-.24l.37.01c.12 0 .28-.05.44.34.16.39.54 1.35.59 1.45.05.1.08.21.02.34-.06.13-.09.21-.18.32l-.27.31c-.09.09-.18.19-.08.37.1.18.44.73.95 1.18.65.58 1.2.76 1.38.85.18.09.29.08.39-.05.1-.13.45-.53.57-.71.12-.18.24-.15.4-.09.16.06 1.05.5 1.23.59.18.09.3.13.34.21.04.08.04.44-.12.89z"/></svg>
+          </span>
+          <span class="dox-channel-meta">
+            <span class="dox-channel-name">WhatsApp</span>
+            <span class="dox-channel-sub">Contactar ahora</span>
+          </span>
+        </a>
+        <a class="dox-channel dox-tg" id="dox-telegram" href="#" target="_blank" rel="noopener noreferrer">
+          <span class="dox-channel-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#29a9eb"/><path fill="#fff" d="M5.5 11.6l11.4-4.4c.53-.19 1 .13.83.94l-1.94 9.15c-.14.66-.53.82-1.08.51l-3-2.21-1.45 1.4c-.16.16-.29.29-.6.29l.21-3.05 5.55-5.01c.24-.21-.05-.33-.38-.12l-6.86 4.32-2.96-.92c-.64-.2-.65-.64.14-.95z"/></svg>
+          </span>
+          <span class="dox-channel-meta">
+            <span class="dox-channel-name">Telegram</span>
+            <span class="dox-channel-sub">AXONDEVUI</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VIP -->
+  <div class="modal" id="vip-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card video-card" role="dialog" aria-modal="true" aria-label="Cómo saber si soy VIP">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <span class="mh-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <defs><linearGradient id="mhg-vip" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop stop-color="#ffcf6b"/><stop offset=".5" stop-color="#ff5a2c"/><stop offset="1" stop-color="#37b6ff"/></linearGradient></defs>
+            <path d="M4 17.5 3 8l5 3.2L12 5l4 6.2L21 8l-1 9.5z" stroke="url(#mhg-vip)" stroke-width="2.1" stroke-linejoin="round" fill="none"/>
+            <path d="M5 20.2h14" stroke="url(#mhg-vip)" stroke-width="2.1" stroke-linecap="round"/>
+            <circle cx="12" cy="10.5" r="1.15" fill="url(#mhg-vip)"/>
+          </svg>
+        </span>
+        <h3>¿Cómo saber si soy VIP?</h3>
+        <p>Descúbrelo en el video.</p>
+      </div>
+      <div class="video-stage">
+        <div class="stage-orbit" aria-hidden="true"></div>
+        <div class="phone">
+          <div class="phone-screen">
+            <video class="video-el" controls playsinline preload="metadata">
+              <source src="m/43e46d4f2f2b.mp4" type="video/mp4" />
+              Tu navegador no soporta el video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRMAR DESCARGA -->
+  <div class="modal" id="download-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card confirm-card" role="dialog" aria-modal="true" aria-label="Confirmar descarga">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <div class="confirm-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
+        </div>
+        <h3>Descargar para Android</h3>
+        <p id="download-name">¿Deseas descargar la aplicación?</p>
+      </div>
+      <div class="confirm-actions">
+        <button class="btn-ghost tilt3d" data-close>Cancelar</button>
+        <button class="btn-primary tilt3d" id="download-confirm">Descargar APK</button>
+      </div>
+      <p class="confirm-note">Aplicación independiente de Tsorbit. No es la app oficial de Nequi S.A.</p>
+    </div>
+  </div>
+
+  <!-- MODAL ELEGIR MÉTODO DE ADQUIRIR -->
+  <div class="modal" id="adquirir-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card adquirir-card" role="dialog" aria-modal="true" aria-label="Elegir método de compra">
+      <button class="modal-close" data-close aria-label="Cerrar">✕</button>
+      <div class="modal-head">
+        <h3>¿Cómo deseas adquirir?</h3>
+        <p id="adquirir-pkg-label">Elige una opción para continuar.</p>
+      </div>
+
+      <div class="adquirir-list">
+        <button type="button" class="adquirir-option adquirir-auto" id="adquirir-go-auto">
+          <span class="adq-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="22" height="22">
+              <path d="M20 8.5A8 8 0 0 0 6.3 6.6L4 9" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 4.5V9h4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 15.5A8 8 0 0 0 17.7 17.4L20 15" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 19.5V15h-4.5" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12.7 8.8 10.4 12h3.2l-2.3 3.2" stroke="url(#actGrad)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="adq-meta">
+            <span class="adq-title">Recarga automática</span>
+            <span class="adq-desc">Paga en línea y tu usuario se activa solo</span>
+          </span>
+          <span class="adq-arrow" aria-hidden="true">›</span>
+        </button>
+
+        <div class="adquirir-support-block">
+          <div class="adquirir-support-head">
+            <span class="adq-ico" aria-hidden="true">💬</span>
+            <span class="adq-meta">
+              <span class="adq-title">Contactar a soporte</span>
+              <span class="adq-desc">Te atendemos por Telegram o WhatsApp</span>
+            </span>
+          </div>
+          <div class="contacts" id="adquirir-contacts"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUENTA WEB — acceso obligatorio + historial privado -->
+  <div class="modal nequi-scope account-gate" id="account-modal" aria-hidden="true">
+    <div class="modal-backdrop account-backdrop"></div>
+    <div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Inicia sesión">
+      <button class="modal-close nq-close" id="account-close" data-close aria-label="Cerrar" hidden>✕</button>
+      <div class="nq-topbar">
+        <img class="nq-brand" src="m/00f6a980fa11.svg" alt="Tsorbit" />
+        <span class="nq-topbar-tag">Acceso</span>
+      </div>
+
+      <div id="account-auth">
+        <div class="account-auth-head">
+          <h3 id="account-auth-title">Inicia sesión</h3>
+        </div>
+
+        <form id="account-login-form" class="nq-recarga-form account-form" novalidate>
+          <div class="nq-fld">
+            <input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
+            <label class="nq-fldl" for="account-login">Usuario o correo</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
+          </div>
+          <p class="nq-rhint account-hint" hidden></p>
+          <button class="nq-rbtn" type="submit">Ingresar</button>
+          <p class="account-switch">¿No tienes cuenta? <button type="button" id="account-to-register">Regístrate gratis</button></p>
+          <p class="account-switch"><button type="button" id="account-to-forgot">¿Olvidaste tu usuario o PIN?</button></p>
+        </form>
+
+        <form id="account-forgot-form" class="nq-recarga-form account-form" novalidate hidden>
+          <p class="account-forgot-info">Escribe tu correo y te enviaremos tu nombre de usuario y un código para crear un PIN nuevo.</p>
+          <div class="nq-fld">
+            <input id="account-forgot-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
+            <label class="nq-fldl" for="account-forgot-email">Correo</label>
+          </div>
+          <p class="nq-rhint account-hint" hidden></p>
+          <button class="nq-rbtn" type="submit">Enviar código</button>
+          <p class="account-switch"><button type="button" id="account-forgot-back">Volver al inicio de sesión</button></p>
+        </form>
+
+        <form id="account-reset-form" class="nq-recarga-form account-form" novalidate hidden>
+          <p class="account-forgot-info">Revisa tu correo: te llegó un código de 6 dígitos.</p>
+          <div class="nq-fld">
+            <input id="account-reset-code" class="nq-fldi" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder=" " maxlength="6" />
+            <label class="nq-fldl" for="account-reset-code">Código de 6 dígitos</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-reset-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="account-reset-pin">Nuevo PIN de 4 dígitos</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-reset-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="account-reset-pin-confirm">Confirmar nuevo PIN</label>
+          </div>
+          <p class="nq-rhint account-hint" hidden></p>
+          <button class="nq-rbtn" type="submit">Cambiar PIN</button>
+          <p class="account-switch"><button type="button" id="account-reset-back">Volver al inicio de sesión</button></p>
+        </form>
+
+        <form id="account-register-form" class="nq-recarga-form account-form" novalidate hidden>
+          <div class="nq-fld">
+            <input id="account-username" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="32" />
+            <label class="nq-fldl" for="account-username">Nombre de usuario</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
+            <label class="nq-fldl" for="account-email">Correo</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="account-pin">PIN de 4 dígitos</label>
+          </div>
+          <div class="nq-fld">
+            <input id="account-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="account-pin-confirm">Confirmar PIN</label>
+          </div>
+          <p class="nq-rhint account-hint" hidden></p>
+          <button class="nq-rbtn" type="submit">Crear cuenta gratis</button>
+          <p class="account-switch">¿Ya tienes cuenta? <button type="button" id="account-to-login">Inicia sesión</button></p>
+        </form>
+      </div>
+
+      <div id="account-dashboard" hidden>
+        <div class="account-profile">
+          <div class="account-avatar" aria-hidden="true">👤</div>
+          <div>
+            <h3 id="account-display-name">Mi cuenta</h3>
+            <p id="account-display-email"></p>
+          </div>
+        </div>
+        <div class="account-history-head">
+          <div>
+            <h4>Mis usuarios comprados</h4>
+            <p>Número, PIN y saldo disponibles después del pago.</p>
+          </div>
+          <button type="button" id="account-refresh" aria-label="Actualizar historial">↻</button>
+        </div>
+        <div class="account-history" id="account-history">
+          <p class="account-empty">Todavía no tienes compras.</p>
+        </div>
+        <button class="nq-rbtn nq-rbtn-ghost account-logout" type="button" id="account-logout">Cerrar sesión</button>
+      </div>
+      <p class="nq-rlegal" id="account-legal">Debes iniciar sesión para usar la web.</p>
+    </div>
+  </div>
+
+  <!-- MODAL RECARGA AUTOMÁTICA — banco → plataforma → datos -->
+  <div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card nq-recarga-card" role="dialog" aria-modal="true" aria-label="Recarga automática">
+      <button class="modal-close nq-close" data-close aria-label="Cerrar">✕</button>
+
+      <div class="nq-topbar">
+        <button type="button" class="nq-back" id="recarga-back" hidden aria-label="Volver">‹</button>
+        <img class="nq-brand" id="recarga-brand" src="m/00f6a980fa11.svg" alt="Recarga" />
+        <span class="nq-topbar-tag" id="recarga-top-tag">Recarga</span>
+      </div>
+
+      <!-- PASO 1: elegir banco -->
+      <div class="nq-step" id="recarga-step-bank">
+        <h3 class="nq-step-title">¿Qué app deseas recargar?</h3>
+        <p class="nq-step-sub">Elige Nequi, Bancolombia o Daviplata</p>
+        <div class="nq-choice-list">
+          <button type="button" class="nq-choice" data-bank="nequi">
+            <img class="nq-choice-ico" src="m/29ddd9fb071a.png" alt="" aria-hidden="true" />
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Nequi</span>
+              <span class="nq-choice-desc">Android e iPhone</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="nq-choice" data-bank="bancolombia">
+            <img class="nq-choice-ico" src="m/a0a326b18550.png" alt="" aria-hidden="true" />
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Bancolombia</span>
+              <span class="nq-choice-desc">Android e iPhone</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="nq-choice" data-bank="daviplata">
+            <img class="nq-choice-ico" src="m/0e6841574621.jpeg" alt="" aria-hidden="true" />
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Daviplata</span>
+              <span class="nq-choice-desc">Android e iPhone</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 2: elegir plataforma -->
+      <div class="nq-step" id="recarga-step-platform" hidden>
+        <h3 class="nq-step-title">Elige tu plataforma</h3>
+        <p class="nq-step-sub" id="recarga-platform-sub">Android o iPhone</p>
+        <div class="nq-choice-list">
+          <button type="button" class="nq-choice" data-platform="android">
+            <span class="nq-choice-platform" aria-hidden="true">
+              <img src="m/229af6e81d73.svg" alt="" />
+            </span>
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Android</span>
+              <span class="nq-choice-desc">APK · Instalar en tu celular</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="nq-choice" data-platform="iphone">
+            <span class="nq-choice-platform" aria-hidden="true">
+              <img src="m/d068cf533e20.svg" alt="" />
+            </span>
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">iPhone</span>
+              <span class="nq-choice-desc">Instalar en iOS</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- PASO 3: datos + pago -->
+      <div class="nq-step" id="recarga-step-form" hidden>
+        <div class="nq-saldo-card">
+          <div class="nq-saldo-banner">
+            <span class="nq-saldo-label">Disponible</span>
+            <button type="button" class="nq-eye" id="recarga-eye" aria-label="Mostrar u ocultar saldo">
+              <img class="nq-eye-show" src="m/c11ff13e5ac5.svg" alt="" aria-hidden="true" />
+              <img class="nq-eye-hide" src="m/f72f7e8086b8.svg" alt="" aria-hidden="true" hidden />
+            </button>
+          </div>
+          <div class="nq-saldo-body">
+            <div class="nq-saldo-amount" id="recarga-saldo">$ 0</div>
+            <div class="nq-saldo-foot">
+              <span class="nq-saldo-pill" id="recarga-precio">—</span>
+              <span class="nq-saldo-note">Se acredita al confirmar el pago</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nq-chips" id="recarga-chips" role="group" aria-label="Elige el saldo">
+          <button type="button" class="nq-chip" data-pkg="p20">2.5M</button>
+          <button type="button" class="nq-chip" data-pkg="p25">4.0M</button>
+          <button type="button" class="nq-chip" data-pkg="p30">6.0M</button>
+          <button type="button" class="nq-chip" data-pkg="p40">8.0M</button>
+          <button type="button" class="nq-chip" data-pkg="p50">10M</button>
+        </div>
+
+        <form id="recarga-form" class="nq-recarga-form" novalidate>
+          <div class="nq-fld" id="recarga-name-wrap">
+            <input id="recarga-name" class="nq-fldi" type="text" autocomplete="name"
+              placeholder=" " maxlength="40" />
+            <label class="nq-fldl" for="recarga-name">Tu nombre</label>
+          </div>
+          <div class="nq-fld" id="recarga-phone-wrap">
+            <input id="recarga-phone" class="nq-fldi" type="tel" inputmode="numeric" autocomplete="off"
+              placeholder=" " maxlength="12" />
+            <label class="nq-fldl" for="recarga-phone">Cel</label>
+          </div>
+          <div class="nq-fld" id="recarga-user-wrap" hidden>
+            <input id="recarga-username" class="nq-fldi" type="text" autocomplete="off"
+              placeholder=" " maxlength="32" />
+            <label class="nq-fldl" for="recarga-username">Nombre de usuario</label>
+          </div>
+          <div class="nq-fld">
+            <input id="recarga-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="off"
+              placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="recarga-pin">Crea tu clave (4 dígitos)</label>
+          </div>
+          <div class="nq-fld">
+            <input id="recarga-pin2" class="nq-fldi" type="password" inputmode="numeric" autocomplete="off"
+              placeholder=" " maxlength="4" />
+            <label class="nq-fldl" for="recarga-pin2">Confirma tu clave</label>
+          </div>
+          <p class="nq-rhint" id="recarga-hint" hidden></p>
+          <button class="nq-rbtn" id="recarga-submit" type="submit">Pagar ahora</button>
+          <p class="nq-rsecure">
+            <img src="m/bdd63a7873be.svg" alt="" aria-hidden="true" />
+            Pago protegido · Cifrado seguro
+          </p>
+        </form>
+      </div>
+
+      <!-- PASO 4: método de pago -->
+      <div class="nq-step" id="recarga-step-payment" hidden>
+        <h3 class="nq-step-title">Elige cómo pagar</h3>
+        <p class="nq-step-sub">Tu usuario se activa al confirmar el pago</p>
+        <div class="nq-choice-list">
+          <button type="button" class="nq-choice" data-payment="wompi">
+            <span class="nq-payment-ico">W</span>
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Wompi</span>
+              <span class="nq-choice-desc">Pago automático y confirmación inmediata</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="nq-choice" data-payment="breb">
+            <span class="nq-payment-ico is-breb">B</span>
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Bre-B</span>
+              <span class="nq-choice-desc">Llave: @AXONDEVUI · aprobación automática</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+          <button type="button" class="nq-choice" data-payment="nequi">
+            <span class="nq-payment-ico is-nequi">N</span>
+            <span class="nq-choice-meta">
+              <span class="nq-choice-title">Nequi</span>
+              <span class="nq-choice-desc">Número: 3180135842 · aprobación automática</span>
+            </span>
+            <span class="nq-choice-arrow" aria-hidden="true">›</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pago manual por Bre-B -->
+      <div class="nq-step" id="recarga-step-breb" hidden>
+        <h3 class="nq-step-title">Paga por Bre-B</h3>
+        <div class="nq-manual-card">
+          <span>Llave Bre-B</span>
+          <strong>@AXONDEVUI</strong>
+          <button type="button" id="recarga-copy-breb">Copiar llave</button>
+        </div>
+        <p class="nq-step-sub">Transfiere exactamente <b id="recarga-manual-amount">—</b>. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
+        <form id="recarga-breb-form" class="nq-recarga-form nq-manual-form" novalidate>
+          <div class="nq-fld">
+            <input id="recarga-payer-name" class="nq-fldi" type="text" autocomplete="name"
+              placeholder=" " maxlength="80" />
+            <label class="nq-fldl" for="recarga-payer-name">Nombres y apellidos del pagador</label>
+          </div>
+          <p class="nq-rhint" id="recarga-breb-hint" hidden></p>
+          <button class="nq-rbtn" id="recarga-breb-ready" type="submit">Listo, ya pagué</button>
+        </form>
+      </div>
+
+      <!-- Pago manual por Nequi -->
+      <div class="nq-step" id="recarga-step-nequi-pay" hidden>
+        <h3 class="nq-step-title">Paga por Nequi</h3>
+        <div class="nq-manual-card">
+          <span>Número Nequi</span>
+          <strong>3180135842</strong>
+          <button type="button" id="recarga-copy-nequi">Copiar número</button>
+        </div>
+        <p class="nq-step-sub">Envía exactamente <b id="recarga-nequi-amount">—</b> a ese número. Después escribe los nombres y apellidos del titular que hizo el pago.</p>
+        <form id="recarga-nequi-form" class="nq-recarga-form nq-manual-form" novalidate>
+          <div class="nq-fld">
+            <input id="recarga-nequi-payer-name" class="nq-fldi" type="text" autocomplete="name"
+              placeholder=" " maxlength="80" />
+            <label class="nq-fldl" for="recarga-nequi-payer-name">Nombres y apellidos del pagador</label>
+          </div>
+          <p class="nq-rhint" id="recarga-nequi-hint" hidden></p>
+          <button class="nq-rbtn" id="recarga-nequi-ready" type="submit">Listo, ya pagué</button>
+        </form>
+      </div>
+
+      <div class="nq-rstate" id="recarga-processing" hidden>
+        <div class="nq-rspinner" aria-hidden="true"></div>
+        <h4 id="recarga-processing-title">Verificando tu pago…</h4>
+        <p class="nq-rsub" id="recarga-processing-msg">No cierres esta ventana.</p>
+      </div>
+
+      <div class="nq-rstate" id="recarga-done" hidden>
+        <img class="nq-rcheck" src="m/64002dc1f914.svg" alt="" aria-hidden="true" />
+        <h4 id="recarga-done-title">¡Usuario activado!</h4>
+        <p id="recarga-done-msg" class="nq-rsub">Tu saldo ya está disponible.</p>
+        <div class="nq-done-actions" id="recarga-done-actions"></div>
+      </div>
+
+      <div class="nq-rstate" id="recarga-failed" hidden>
+        <img class="nq-rfailico" src="m/39c1d6a8a1a1.svg" alt="" aria-hidden="true" />
+        <h4>Pago no completado</h4>
+        <p id="recarga-failed-msg" class="nq-rsub">El pago fue rechazado o cancelado. Puedes intentarlo de nuevo.</p>
+        <button class="nq-rbtn nq-rbtn-ghost" type="button" id="recarga-retry">Reintentar</button>
+      </div>
+
+      <p class="nq-rlegal">Servicio independiente de Tsorbit. No afiliado a las entidades financieras mostradas.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer" id="organizacion">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="m/467df82bc779.svg" alt="Nequi Tsorbit" class="foot-logo" />
+        <div class="foot-brand-text">
+          <span class="foot-brand-name">NEQUI TSORBIT</span>
+          <span class="foot-brand-sub">Organización</span>
+        </div>
+      </div>
+      <div class="foot-by">Por <b>『тѕσявιт』</b> · AXONDEVUI</div>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>Aplicaciones</h4>
+        <a href="#apps" data-nav>Nequi</a>
+        <a href="#apps" data-nav>Bancolombia</a>
+        <a href="#apps" data-nav>Daviplata</a>
+        <a href="#apps" data-nav>G5</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Servicios</h4>
+        <a href="#soporte" data-nav>Recarga automática</a>
+        <a href="#precios" data-nav>Lista de precios</a>
+        <a data-view="view-consultar" role="button" tabindex="0">Consultar nombres</a>
+        <a data-open="dox-modal" role="button" tabindex="0">DOX BOT</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Ayuda</h4>
+        <a href="#" data-open="support-modal">Recargas y Soporte</a>
+        <a href="#tutoriales" data-nav>Tutoriales</a>
+        <a href="#" data-open="recarga-tuto-modal">Cómo recargar automático</a>
+        <a href="#" data-open="keys-modal">¿Cómo usar llaves?</a>
+        <a href="#" data-open="vip-modal">¿Cómo saber si soy VIP?</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Comunidades</h4>
+        <a href="https://t.me/tsorbit" target="_blank" rel="noopener noreferrer">Telegram oficial</a>
+        <a href="https://chat.whatsapp.com/HjmAbKuem3BL52676YiWWX?s=cl&amp;p=a&amp;ilr=1" target="_blank" rel="noopener noreferrer">WhatsApp oficial</a>
+        <a href="#comunidades" data-nav>Novedades</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Contáctanos</h4>
+        <a href="#" id="foot-telegram" target="_blank" rel="noopener noreferrer">Telegram: AXONDEVUI</a>
+        <a href="#" id="foot-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+        <a href="#organizacion" data-nav>La Organización</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Nequi Tsorbit · Todos los derechos reservados</span>
+    </div>
+  </footer>
 </body>
 </html>
