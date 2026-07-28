@@ -48,7 +48,6 @@
       <a href="#tutoriales" data-nav>Tutoriales</a>
       <a href="#comunidades" data-nav>Comunidades</a>
       <a href="#organizacion" data-nav>Contacto</a>
-      <a href="#" id="account-nav" data-account-open>Mi cuenta</a>
     </nav>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
@@ -342,7 +341,7 @@
         </div>
 
         <div class="platform-row">
-          <button class="plat-btn android tilt3d" data-download="/apk/NequiCol.apk?v=20260727e" data-filename="Nequi Col.apk">
+          <button class="plat-btn android tilt3d" data-download="/apk/NequiCol.apk?v=20260727f" data-filename="Nequi Col.apk">
             <span class="plat-ico" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="#3ddc84"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>
             </span>
@@ -985,113 +984,6 @@
     </div>
   </div>
 
-  <!-- CUENTA WEB — acceso obligatorio + historial privado -->
-  <div class="modal nequi-scope account-gate" id="account-modal" aria-hidden="true">
-    <div class="modal-backdrop account-backdrop"></div>
-    <div class="modal-card nq-recarga-card account-card" role="dialog" aria-modal="true" aria-label="Inicia sesión">
-      <button class="modal-close nq-close" id="account-close" data-close aria-label="Cerrar" hidden>✕</button>
-      <div class="nq-topbar">
-        <img class="nq-brand" src="m/00f6a980fa11.svg" alt="Tsorbit" />
-        <span class="nq-topbar-tag">Acceso</span>
-      </div>
-
-      <div id="account-auth">
-        <div class="account-auth-head">
-          <h3 id="account-auth-title">Inicia sesión</h3>
-        </div>
-
-        <form id="account-login-form" class="nq-recarga-form account-form" novalidate>
-          <div class="nq-fld">
-            <input id="account-login" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="254" />
-            <label class="nq-fldl" for="account-login">Usuario o correo</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-login-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="current-password" placeholder=" " maxlength="4" />
-            <label class="nq-fldl" for="account-login-pin">PIN de 4 dígitos</label>
-          </div>
-          <p class="nq-rhint account-hint" hidden></p>
-          <button class="nq-rbtn" type="submit">Ingresar</button>
-          <p class="account-switch">¿No tienes cuenta? <button type="button" id="account-to-register">Regístrate gratis</button></p>
-          <p class="account-switch"><button type="button" id="account-to-forgot">¿Olvidaste tu usuario o PIN?</button></p>
-        </form>
-
-        <form id="account-forgot-form" class="nq-recarga-form account-form" novalidate hidden>
-          <p class="account-forgot-info">Escribe tu correo y te enviaremos tu nombre de usuario y un código para crear un PIN nuevo.</p>
-          <div class="nq-fld">
-            <input id="account-forgot-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
-            <label class="nq-fldl" for="account-forgot-email">Correo</label>
-          </div>
-          <p class="nq-rhint account-hint" hidden></p>
-          <button class="nq-rbtn" type="submit">Enviar código</button>
-          <p class="account-switch"><button type="button" id="account-forgot-back">Volver al inicio de sesión</button></p>
-        </form>
-
-        <form id="account-reset-form" class="nq-recarga-form account-form" novalidate hidden>
-          <p class="account-forgot-info">Revisa tu correo: te llegó un código de 6 dígitos.</p>
-          <div class="nq-fld">
-            <input id="account-reset-code" class="nq-fldi" type="text" inputmode="numeric" autocomplete="one-time-code" placeholder=" " maxlength="6" />
-            <label class="nq-fldl" for="account-reset-code">Código de 6 dígitos</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-reset-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-            <label class="nq-fldl" for="account-reset-pin">Nuevo PIN de 4 dígitos</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-reset-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-            <label class="nq-fldl" for="account-reset-pin-confirm">Confirmar nuevo PIN</label>
-          </div>
-          <p class="nq-rhint account-hint" hidden></p>
-          <button class="nq-rbtn" type="submit">Cambiar PIN</button>
-          <p class="account-switch"><button type="button" id="account-reset-back">Volver al inicio de sesión</button></p>
-        </form>
-
-        <form id="account-register-form" class="nq-recarga-form account-form" novalidate hidden>
-          <div class="nq-fld">
-            <input id="account-username" class="nq-fldi" type="text" autocomplete="username" placeholder=" " maxlength="32" />
-            <label class="nq-fldl" for="account-username">Nombre de usuario</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-email" class="nq-fldi" type="email" autocomplete="email" placeholder=" " maxlength="254" />
-            <label class="nq-fldl" for="account-email">Correo</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-pin" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-            <label class="nq-fldl" for="account-pin">PIN de 4 dígitos</label>
-          </div>
-          <div class="nq-fld">
-            <input id="account-pin-confirm" class="nq-fldi" type="password" inputmode="numeric" autocomplete="new-password" placeholder=" " maxlength="4" />
-            <label class="nq-fldl" for="account-pin-confirm">Confirmar PIN</label>
-          </div>
-          <p class="nq-rhint account-hint" hidden></p>
-          <button class="nq-rbtn" type="submit">Crear cuenta gratis</button>
-          <p class="account-switch">¿Ya tienes cuenta? <button type="button" id="account-to-login">Inicia sesión</button></p>
-        </form>
-      </div>
-
-      <div id="account-dashboard" hidden>
-        <div class="account-profile">
-          <div class="account-avatar" aria-hidden="true">👤</div>
-          <div>
-            <h3 id="account-display-name">Mi cuenta</h3>
-            <p id="account-display-email"></p>
-          </div>
-        </div>
-        <div class="account-history-head">
-          <div>
-            <h4>Mis usuarios comprados</h4>
-            <p>Número, PIN y saldo disponibles después del pago.</p>
-          </div>
-          <button type="button" id="account-refresh" aria-label="Actualizar historial">↻</button>
-        </div>
-        <div class="account-history" id="account-history">
-          <p class="account-empty">Todavía no tienes compras.</p>
-        </div>
-        <button class="nq-rbtn nq-rbtn-ghost account-logout" type="button" id="account-logout">Cerrar sesión</button>
-      </div>
-      <p class="nq-rlegal" id="account-legal">Debes iniciar sesión para usar la web.</p>
-    </div>
-  </div>
-
   <!-- MODAL RECARGA AUTOMÁTICA — banco → plataforma → datos -->
   <div class="modal nequi-scope" id="recarga-modal" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
@@ -1192,6 +1084,12 @@
         </div>
 
         <form id="recarga-form" class="nq-recarga-form" novalidate>
+          <div class="nq-fld" id="recarga-email-wrap">
+            <input id="recarga-email" class="nq-fldi" type="email" autocomplete="email"
+              placeholder=" " maxlength="254" />
+            <label class="nq-fldl" for="recarga-email">Correo electrónico</label>
+          </div>
+          <p class="nq-step-sub" style="margin:0 0 12px">Te enviaremos el usuario y el PIN a este correo cuando se confirme el pago.</p>
           <div class="nq-fld" id="recarga-name-wrap">
             <input id="recarga-name" class="nq-fldi" type="text" autocomplete="name"
               placeholder=" " maxlength="40" />
